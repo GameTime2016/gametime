@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.CollectorsDao">
+     <resultMap type="Collectors" id="resultselectCollectors">
+	    <result column="GS_CollectorsCode" property="collectorsCode" />
+	    <result column="GS_CollectorsUserCode" property="collectorsUserCode" />
+	    <result column="GS_CollectorsPrdCode" property="collectorsPrdCode"/>
+	    <result column="GS_CollectorsCrtDate" property="collectorsCrtDate" />
+	    <result column="GS_CollectorsNote" property="collectorsNote" />
+    </resultMap>
+    
+	<insert id="setAddCollectors" parameterType="Collectors">
+		insert into
+		gs_collectors(GS_CollectorsCode,
+                       GS_CollectorsUserCode,
+                       GS_CollectorsPrdCode,
+                       GS_CollectorsCrtDate,
+                       GS_CollectorsNote)
+		values(#{collectorsCode},#{collectorsUserCode},#{collectorsPrdCode},
+		#{collectorsCrtDate},#{collectorsNote})
+    </insert>
+    <select id="selectCollectors" parameterType="String" resultMap="resultselectCollectors">
+	  select GS_CollectorsCode,GS_CollectorsUserCode,GS_CollectorsPrdCode,GS_CollectorsCrtDate,GS_CollectorsNote from `gs_collectors` where GS_CollectorsPrdCode=#{collectorsPrdCode}
+    </select> 
+    <delete id="deleteCollectors" parameterType="Collectors">
+        delete from gs_collectors where GS_CollectorsPrdCode=#{collectorsPrdCode} and GS_CollectorsUserCode=#{collectorsUserCode}
+    </delete>
+</mapper>

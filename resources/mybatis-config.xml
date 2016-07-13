@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+    <typeAliases>   
+        <typeAlias alias="User" type="com.sy.gametime.pojo.User"/>
+        <typeAlias alias="Category" type="com.sy.gametime.pojo.Category"/> 
+        <typeAlias alias="Platform" type="com.sy.gametime.pojo.Platform"/> 
+        <typeAlias alias="Language" type="com.sy.gametime.pojo.Language"/> 
+        <typeAlias alias="Product" type="com.sy.gametime.pojo.Product"/> 
+        <typeAlias alias="UserAddress" type="com.sy.gametime.pojo.UserAddress"/> 
+        <typeAlias alias="ProductItem" type="com.sy.gametime.pojo.ProductItem"/>
+        <typeAlias alias="Picture" type="com.sy.gametime.pojo.Picture"/>  
+        <typeAlias alias="Collectors" type="com.sy.gametime.pojo.Collectors"/> 
+    </typeAliases>   
+  
+    <environments default="development">  
+        <environment id="development">  
+        <transactionManager type="JDBC"/>  
+            <dataSource type="POOLED">  
+            <property name="driver" value="com.mysql.jdbc.Driver"/>  
+            <property name="url" value="jdbc:mysql://127.0.0.1:3306/gametime" />  
+            <property name="username" value="root"/>  
+            <property name="password" value="123"/>  
+            </dataSource>  
+        </environment>  
+    </environments>  
+      
+    <mappers>  
+        <mapper resource="sqlmap/User.xml"/>            
+        <mapper resource="sqlmap/Category.xml"/>  
+        <mapper resource="sqlmap/Platform.xml"/> 
+        <mapper resource="sqlmap/Language.xml"/> 
+        <mapper resource="sqlmap/Product.xml"/>     
+        <mapper resource="sqlmap/UserAddress.xml"/>     
+        <mapper resource="sqlmap/ProductItem.xml"/>      
+        <mapper resource="sqlmap/Picture.xml"/> 
+        <mapper resource="sqlmap/Collectors.xml"/>     
+    </mappers>  
+</configuration>  

@@ -1,0 +1,51 @@
+<!-- 租赁车界面 -->
+<div id="cart-panel" class="container">
+  <div class="row">
+    <!-- 游戏车边侧导航栏 -->
+    <div id="cart-sidebar" class="col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="sidebar-selected"><a ui-sref="rental-cart"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>租赁车</a></li>
+          <li><a ui-sref="shopping-cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车</a></li>
+          <li><a ui-sref="./reserve_cart.asp"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>预定车</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div id="rental-cart-panel" class="col-md-9">
+      <h2>租赁车</h2>
+      <hr>
+      <div id="rental-cart">
+        <form id="rental-cart-form" name="form_rental_cart">
+          <table class="table table-hover" id="rental-table">
+            <tr class="info">
+              <th class="col-sm-1"><input class="chk" type="checkbox" ng-model="check_all" ng-click="checkAll()"> 全选</th>
+              <th class="col-sm-1"></th>
+              <th class="col-sm-2">商品名称</th>
+              <th class="col-sm-3">租金</th>
+              <th class="col-sm-1">押金</th>
+              <th class="col-sm-1"></th>
+            </tr>
+            <tr ng-repeat="item in items">
+              <td><input class="chk" name="item" type="checkbox" ng-checked="check_all" ng-click="check($index)" ></td>
+              <td><img ng-src="{{item.href}}"></td>
+              <td><a href="">{{item.name}}</a></td>
+              <td>{{item.rental}}</td>
+              <td>{{item.deposit}}</td>
+              <td><a href="" ng-click="deleteItem($index)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除</a></td>
+            </tr>
+          </table>
+          <hr>
+          <div id="summary-panel">
+            <p id="remind-area" ></p>
+            <table id="summary-table" class="pull-right">
+              <td class="col-sm-2"></td>
+              <td class="col-sm-3">已选商品 <span class="item-number">{{item_number}}</span> 件</td>
+              <td class="col-sm-3">押金 <span class="balance">¥{{total_deposit}}</span></td>
+              <td class="col-sm-4"><button id="balance-btn" class="btn btn-lg btn-warning" type="submit" ng-disabled="item_number == 0">结算</button></td>
+            </table>
+          </div>
+        </form>
+      </div>        
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<!-- 登录界面 -->
+<div id="login" class="container">
+  <div id="login-panel" class="col-md-4 col-md-offset-4">
+    <p id="login-notify">{{notify}}</p>
+    <form id="login-form" name="form_login" class="form-horizontal" novalidate>
+      <div class="form-group">
+          <!-- <label for="inputEmail3" class="col-sm-2 control-label">账号</label> -->
+        <div class="col-sm-12 has-feedback">
+          <input 
+            name="account" 
+            ng-model="credentials.username" 
+            type="text" 
+            class="form-control  input-lg" 
+            placeholder="账号"  
+            required
+            ng-change="invalid_info=false"
+            ng-class="{'validation-error':form_login.account.$invalid&&form_login.account.$dirty,'validation-success':form_login.account.$valid&&form_login.account.$dirty}">
+          <span class="warning-info" ng-show="form_login.account.$invalid&&form_login.account.$dirty">{{"请输入账号"}}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <label for="inputPassword3" class="col-sm-2 control-label">密码</label> -->
+        <div class="col-sm-12 has-feedback">
+          <input 
+            name="password" 
+            ng-model="credentials.password" 
+            type="password" 
+            class="form-control input-lg" 
+            placeholder="密码"  
+            required
+            ng-change="invalid_info=false"
+            ng-class="{'validation-error':form_login.password.$invalid&&form_login.password.$dirty,'validation-success':form_login.password.$valid&&form_login.password.$dirty}">     
+        </div>
+      </div>
+      <div class="form-group code-panel" ng-if="requireCode">
+        <div class="col-sm-4 has-feedback">
+          <input 
+            name="identifying_code" 
+            ng-model="credentials.identifying_code"  
+            class="form-control" 
+            placeholder="验证码"
+            required 
+            ng-class="{'validation-error':form_login.identifying_code.$invalid&&form_login.identifying_code.$dirty,'validation-success':form_login.identifying_code.$valid&&form_login.identifying_code.$dirty}">
+        </div>
+        <div class="col-sm-5">
+          <img ng-src="{{codeUrl}}">
+        </div>
+        <div class="col-sm-3">
+          <span><a ng-click="changeCode()">换一张</a></span>
+        </div>
+      </div>
+      <div class="error-info-panel">
+        <span class="warning-info" ng-show="form_login.password.$invalid&&form_login.password.$dirty" >{{"请输入密码"}}</span>
+        <span class="warning-info" ng-show="invalid_info">{{error_conntent}}</span>
+      </div>
+      <div class="form-group">
+        <div class=" col-sm-12">
+          <button ng-disabled="form_login.$invalid&&form_login.$dirty" ng-click="LogIn(credentials)" type="button" class="btn btn-warning">登录</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <a ui-sref="register"><button type="button" class="btn btn-success"><span>注册</span></button></a>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <a ui-sref="retrieve-password">忘记密码？</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

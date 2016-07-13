@@ -1,0 +1,125 @@
+
+<!-- 账户界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li class="sidebar-selected"><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div class="account-content-panel col-md-9">
+      <h2>我的帐单</h2>
+      <hr>
+      <div id="account-bill">
+        <div class="jumbotron">
+          <div class=" row">
+            <div class="col-sm-3">
+              <span class="bill-title">押金</span><br>
+              <span class="bill-price bill-price-deposit">600</span><span class="currency"> ¥</span>
+            </div>
+            <div class="col-sm-9">
+              <ul class="bill-explaination">
+                <li>普通租赁将收取押金作为抵押</li>
+                <li>租金产生的费用将从押金中扣除</li>
+                <li>剩余押金将于游戏归还并且验收完好后归还回支付账户</li>
+              </ul>
+              <a href="">查看详细租赁说明</a>
+            </div>
+          </div>
+        </div>
+        <div class="jumbotron">
+          <div class=" row">
+            <div class="col-sm-3">
+              <span class="bill-title">租金</span><br>
+              <span class="bill-price bill-price-rental">135</span><span class="currency"> ¥</span>
+            </div>
+            <div class="col-sm-9">
+              <ul class="bill-explaination">
+                <li>普通租赁会产生租金</li>
+                <li>最短租赁时间为一周，不满一周按一周费用计算</li>
+                <li>会员租赁不会产生租金</li>
+                <li>游戏不同，租金不同</li>
+                <li>来回包裹邮寄所花费天数不计算在内</li>
+              </ul>
+              <a href="">查看详细租赁说明</a>
+            </div>
+          </div>
+        </div>
+        <div class="jumbotron">
+          <div class=" row">
+            <div class="col-sm-3">
+              <span class="bill-title">结余</span><br>
+              <span class="bill-price bill-price-balance">465</span><span class="currency"> ¥</span>
+            </div>
+            <div class="col-sm-9">
+              <ul class="bill-explaination">
+                <li>押金扣除租金费用为结余金额</li>
+                <li>结余押金将返还回支付账户内</li>
+              </ul>
+              <a href="">查看详细租赁说明</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a id="collapse-bar" role="button" ng-click="isCollapsed=!isCollapsed" aria-expanded="true" aria-controls="bill-detail">
+              账单明细 <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </a>
+          </h4>
+        </div>
+        <div id="bill-detail" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body" uib-collapse="isCollapsed">
+            <table class="table" id="order-table">
+              <tr>
+                <th class="col-sm-2">订单号</th>
+                <th class="col-sm-2">游戏名称</th>
+                <th class="col-sm-1">押金</th>
+                <th class="col-sm-2">起租日期</th>
+                <th class="col-sm-2">租赁天数</th>
+                <th class="col-sm-1">单价</th>
+                <th class="col-sm-2">租金</th>
+              </tr>
+              <tr>
+                <td>1315140708770887</td>
+                <td>NBA2016</td>
+                <td class="bill-price-deposit">350</td>
+                <td>2015-12-10</td>
+                <td>11</td>
+                <td>30/周</td>
+                <td class="bill-price-rental">60</td>
+              </tr>
+              <tr>
+                <td>1315140708770887</td>
+                <td>刺客信条：兄弟会</td>
+                <td class="bill-price-deposit">250</td>
+                <td>2015-12-1</td>
+                <td>21</td>
+                <td>25/周</td>
+                <td class="bill-price-rental">75</td>
+              </tr>
+              <tr>
+                <td>1315140708770887</td>
+                <td>GTA5</td>
+                <td class="bill-price-deposit">0</td>
+                <td>2015-11-10</td>
+                <td>41</td>
+                <td>0</td>
+                <td class="bill-price-rental">0 (会员租赁)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>        
+    </div>
+  </div>
+</div>

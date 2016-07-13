@@ -1,0 +1,83 @@
+
+<!-- 账户界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-sm-12 col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="sidebar-selected"><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div class="account-content-panel col-sm-12 col-md-9">
+      <h2>个人信息</h2>
+      <hr>
+      <div id="account-info">
+        <table id="account-info-table" class="table col-md-offset-1">
+          <tr>
+            <td class="info-title">账号名称</td>
+            <td class="info-content">{{account.user_account}}</td>
+          </tr>
+          <tr>
+            <td class="info-title">账号等级</td>
+            <td class="info-content">高级VIP会员（有效期至2016-12-20）</td>
+          </tr>
+          <tr>
+            <td class="info-title">邮寄地址</td>
+            <td class="info-content">北京市海淀区促进路城市花园155号3单元702<a class="sec-oporation" ui-sref="address"> [修改]</a></td>
+          </tr>
+          <tr>
+            <td class="info-title">密码</td>
+            <td class="info-content"><a  class="sec-oporation" ui-sref="modify-password"> [修改]</a></td>
+          </tr>
+          <tr>
+            <td class="info-title">身份证号</td>
+            <td class="info-content">
+              未填写<a href="" class="sec-oporation" ng-click="fill_ID=!fill_ID"> [填写]</a>
+              <div class="collapse-id" uib-collapse="!fill_ID">
+                <form>
+                  <div class="input-group col-sm-8">
+                    <label class="sr-only" for="ID">ID</label>
+                    <input type="text" class="form-control" id="ID" placeholder="请输入您的身份证号">
+                    <div class="input-group-btn">
+                      <button type="button" class="btn btn-warning" ng-click="fill_ID=false">确定</button>
+                    </div>
+                  </div>
+                  
+                </form>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="account-security" class="col-xs-offset-1">
+        <div class="jumbotron col-xs-12 col-md-12 col-sm-12 row">
+          <div class="col-sm-1">
+            <span class="glyphicon glyphicon-phone security-icon" aria-hidden="true"></span>
+          </div>
+          <div class="col-sm-8 col-sm-offset-1 status-info">
+            <p><b>手机已验证</b><span class="glyphicon glyphicon-ok security-icon-success" aria-hidden="true"></span></p>
+            <p class="sec-tag">{{account.user_phone}}<a class="sec-oporation" ui-sref="modify-phone"> [修改]</a></p>
+            <p>您可以享受手机相关的安全及提醒服务</p>
+          </div>
+        </div>
+        <div class="jumbotron col-xs-12 col-md-12 col-sm-12 row">
+          <div class="col-sm-1">
+            <span class="glyphicon glyphicon-envelope security-icon" aria-hidden="true"></span>
+          </div>
+          <div class="col-sm-8 col-sm-offset-1 status-info">
+            <p><b>邮箱未绑定</b><span class="glyphicon glyphicon-remove security-icon-error" aria-hidden="true"></span></p>
+            <p class="sec-tag">{{account.user_email}}<a class="sec-oporation" ui-sref="bind-email"> [绑定]</a><a class="sec-oporation" ui-sref="modify-email"> [修改]</a></p>
+            <p>您可以使用邮箱来保障您的账号安全</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

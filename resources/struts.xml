@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<constant name="struts.action.extension" value="aspx"></constant>
+	<!-- 开发模式 
+	<constant name="struts.devMode" value="true"></constant>
+	-->
+	<package name="user11" namespace="/user11" extends="struts-default">
+		<action name="wetwet" class="com.sy.gametime.action.wetwet" method="execute"></action>
+	</package>
+	<!-- 获取游戏类别 20160602 Symars -->
+	<package name="category" namespace="/" extends="struts-default">
+		<action name="GI_GetCategory" class="com.sy.gametime.action.CategoryAction" method="getCategory"></action>
+	</package>
+	<package name="platform" namespace="/" extends="struts-default">
+		<action name="GI_GetPlatform" class="com.sy.gametime.action.PlatformAction" method="getPlatform"></action>
+	</package>
+	<package name="language" namespace="/" extends="struts-default">
+		<action name="GI_GetLanguage" class="com.sy.gametime.action.LanguageAction" method="getLanguage"></action>
+	</package>
+	<package name="auth" namespace="/" extends="struts-default">
+		<!-- 获取验证码状态 -->
+		<action name="GI_GetLoginCode" class="com.sy.gametime.action.CheckCodeStateAction" method="getCheckCodeState"></action>
+		<!-- 获取验证码 -->
+		<action name="GI_GetCheckCode" class="com.sy.gametime.action.CheckCodeAction" method="getCheckCode"></action>
+		<!-- 登录 login -->
+		<action name="GI_Login" class="com.sy.gametime.action.AuthAction" method="login"></action>
+		<!-- 注销 logout -->
+		<action name="GI_LogOut" class="com.sy.gametime.action.AuthAction" method="logout"></action>
+		<!-- 获取session(用户信息) -->
+		<action name="GI_GetLoginInf" class="com.sy.gametime.action.AuthAction" method="getLoginInfo"></action>
+		<!-- 获取用户权限(是否登陆) -->
+		<action name="GI_GetUserRight" class="com.sy.gametime.action.AuthAction" method="getUserRight"></action>	
+		<!-- 更改用户基本信息 -->
+		<action name="GI_UpdUserInf" class="com.sy.gametime.action.UserAction" method="updateUserInfo"></action>	
+		<!-- 更改用户手机号 -->
+		<action name="GI_GetUserPhone" class="com.sy.gametime.action.UserAction" method="updateUserPhone"></action>	
+		<!-- 更改用户密码 -->
+		<action name="GI_GetUserPsw" class="com.sy.gametime.action.UserAction" method="updateUserPassword"></action>	
+	</package>
+	
+	<package name="sms" namespace="/" extends="struts-default">
+		<!-- 短信验证码 -->
+		<action name="GI_SendSMS" class="com.sy.gametime.action.SMSAction" method="sms"></action>
+	</package>
+	
+	<package name="product" namespace="/" extends="struts-default">
+		<!-- 获取清单 -->
+		<action name="GI_GetProductsList" class="com.sy.gametime.action.ProductAction" method="getProductList"></action>
+		<!-- 获取游戏详细信息 -->
+		<action name="GI_GetProductDetail" class="com.sy.gametime.action.ProductDetailAction" method="getProductDetail"></action>
+	</package>
+	
+	<package name="UserAddress" namespace="/" extends="struts-default">
+		<action name="GI_AddUserAddress" class="com.sy.gametime.action.UserAddressAction" method="setUserAddressID"></action>		
+		<action name="GI_DelUserAddress" class="com.sy.gametime.action.UserAddressAction" method="deleteUserAddressID"></action>
+		<action name="GI_UpdUserAddress" class="com.sy.gametime.action.UserAddressAction" method="updateUserAddressID"></action>
+		<action name="GI_GetUserAddress" class="com.sy.gametime.action.UserAddressAction" method="selectUserAddressID"></action>
+	</package>
+	<package name="Collectors" namespace="/" extends="struts-default">
+		<action name="GI_AddCollectors" class="com.sy.gametime.action.CollectorsAction" method="setAddCollectorsID"></action>		
+		<action name="GI_DelCollectors" class="com.sy.gametime.action.CollectorsAction" method="deleteCollectorsID"></action>
+	</package>
+	
+	<package name="test" namespace="/" extends="struts-default">
+		<action name="test" class="com.sy.gametime.action.TestAction" method="test"></action>
+	</package>
+	
+	<package name="trade" namespace="/" extends="struts-default">
+		<action name="GI_GnrtBooking" class="com.sy.gametime.action.TradeAction" method="trade"></action>
+		<action name="GI_GetBooking" class="com.sy.gametime.action.TradeAction" method="trade"></action>
+		
+		
+	</package>
+</struts>

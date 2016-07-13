@@ -1,0 +1,156 @@
+<!-- 产品展示页面内容 -->
+<div id="product-detail-content">
+  <!-- 面包屑导航 -->
+  <div id="video-panel" >
+    <video id="game-video" video-ended ng-src={{game_video}}  autoplay="autoplay"  poster={{game_poster}}></video>
+    <div class="video-curtain container" >
+      <div class="row">
+        <div id="game-pic" class="wrapper col-sm-1 col-sm-offset-2">
+          <div class="game-pic-wrapper">
+            <img ng-src={{game_picture}}>
+          </div>
+        </div>
+        <div class="wrapper col-xs-12 col-sm-5">
+          <div class="game-info-wrapper">
+            <div class="game-name-wrapper">
+              <span>{{game_name}}</span>
+            </div>
+            <div class="game-descr-wrapper">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <span class="info-title"><b>平台</b></span>
+                  <span class="info-content">{{game_platform}}</span>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                  <span class="info-title"><b>语言</b></span>
+                  <span class="info-content">{{game_language}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="game-try-wrapper">
+              <button type="button" class="btn btn-danger">会员租赁</button>
+              <button ui-sref="item-confirm({productID:'{{game_code}}'})" type="button" class="btn btn-warning">普通租赁</button>
+              <button type="button" class="btn btn-warning">购买</button>
+            </div>
+          </div>
+        </div>
+        <div id="video-control" class="wrapper col-sm-2">
+          <div class="video-control-wrapper">
+            <span class="glyphicon" ng-class="{'glyphicon-pause': isPlay,'glyphicon-play':!isPlay}" aria-hidden="true" ng-click="play()"></span>
+            <span class="glyphicon " ng-class="{'glyphicon-volume-off': isMute,'glyphicon-volume-up':!isMute}" aria-hidden="true" ng-click="volume()"></span>
+            <span class="glyphicon " ng-class="{'glyphicon glyphicon-heart-empty': !isCollected,'glyphicon glyphicon-heart':isCollected}" ng-click="collect()"  popover-trigger="none" popover-is-open="isPopover" uib-popover="{{resultDescr}}" popover-placement="top"></span>
+            <span id="span-pg"><img ng-src="./source/image/pg-18.jpg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="game-info-panel">
+    <div class=" bc-gray">
+      <div class="panel-wrapper container">
+        <div class="row">
+          <div class="col-xs-9">
+            <div>
+              <p class="panel-title">详细信息</p>
+            </div>
+            <div class="detail-wrapper">
+              <dl class="info-dl dl-horizontal">
+                <dt>游戏简介</dt>
+                <dd>{{game_desc}}</dd>          
+                <dt>发行日期</dt>
+                <dd>{{game_issue}}</dd>
+                <dt>发行公司</dt>
+                <dd>{{game_company}}</dd>
+                <dt>类型</dt>
+                <dd>{{game_category}}</dd>
+                <dt>游戏人数</dt>
+                <dd>{{game_player}}</dd>    
+              </dl>
+            </div>
+          </div>
+          <div id="rating-panel" class="col-xs-3">
+            <div>
+              <img src="./source/image/hex.png">
+              <div id="rating-num">
+                <span id="span1" ng-style="{'font-size':span1_fontsize}">IGN评分</span>
+                <span id="span2" ng-style="{'font-size':span2_fontsize}">{{game_rate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container panel-wrapper">
+        <div>
+          <p class="panel-title">游戏截图</p>
+        </div>
+        <div class="screenshot-wrapper">
+          <uib-carousel>
+            <uib-slide ng-repeat="src in srcs">
+              <a  ng-repeat="item in src.group" ng-click="getMyCtrlScope().openViewer(item.index)">
+                <img ng-src="{{item.href}}">
+              </a>
+            </uib-slide>
+          </uib-carousel> 
+        </div>
+      </div>
+    </div>
+
+    <!-- 放大图片 -->
+    <div class="pic-viewer" ng-show="isEnlarged">
+      <div class="close-viewer-wrapper">
+        <span class="viewer-icon glyphicon glyphicon-remove" ng-click="closeViewer()"></span>
+      </div>
+      <div class="viewer-control viewer-control-left">
+        <span class="viewer-icon glyphicon glyphicon-chevron-left" ng-click="previous()"></span>
+      </div>
+      <div class="pic-wrapper">
+        <img ng-src="{{enlarged_href}}">
+      </div>
+      <div class="viewer-control viewer-control-right">
+        <span class="viewer-icon glyphicon glyphicon-chevron-right" ng-click="next()"></span>
+      </div>
+    </div>
+    <div class="bc-gray">
+      <div class="panel-wrapper container">
+        <div>
+          <p class="panel-title">系统需求</p>
+        </div>
+        <div class="requirement-wrapper">
+          <dl class="info-dl dl-horizontal">
+            <dt>最低容量</dt>
+            <dd>{{game_storage}}</dd>          
+            <dt>影像输出</dt>
+            <dd>{{game_videooutput}}</dd>
+            <dt>震动机能</dt>
+            <dd>{{game_vibrate}}</dd>
+            <dt>遥控操作</dt>
+            <dd>{{game_remote}}</dd>    
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container panel-wrapper">
+        <div>
+          <p class="panel-title">更过类似游戏</p>
+        </div>
+        <div id="similiar-wrapper" class="row">
+          <div class="col-xs-4 col-sm-3 col-md-2" ng-repeat="list in similiarGames">
+            <div class="thumbnail grid">
+              <figure>
+                <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+                <img ng-src={{list.Picture}}>
+                </a>
+              </figure>
+              <div class="game-caption">
+                <h3><a ui-sref="product-detail({productID:'{{list.Code}}'})">{{list.Name}}</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

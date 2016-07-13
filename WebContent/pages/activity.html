@@ -1,0 +1,60 @@
+<!-- 活动页面内容 -->
+<div id="activity-panel" class="container">
+  <!-- 索引搜索 -->
+  <div class="sort-panel"> 
+    <ul class="nav nav-pills">
+      <li class="active"><a>全部</a></li>
+      <li><a>线上</a></li>
+      <li><a>线下</a></li>
+    </ul>
+    <hr>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">排序</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">时间 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">地点</a></li>
+        <li>
+          <a href="#" >人数<span class="caret"></span></a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="搜索活动">
+        </div>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--     <form class="form-inline">
+      <div class="form-group">
+        <label>搜索</label>
+        <input ng-model="query" type="text" class="form-control" placeholder="活动名称">
+      </div>
+      <div class="form-group">
+        <label>排序</label>
+        <select  class="form-control" ng-model="order">
+          <option value="">默认</option>
+          <option value="date">日期</option>
+        </select>
+      </div>
+    </form> -->
+  </div>
+  <div class="activity-wrapper grid" ng-repeat="activity in activities| filter:{name:query} | orderBy:order">
+    <figure class="effect-zoe">
+      <a>
+        <img ng-src="{{activity.href}}" alt=""/>
+        <div class="text-wrapper">
+          <p class="activity-title">{{activity.name}}</p>
+          <p><b>时间 : </b>{{activity.date}}</p>
+          <p><b>地点 : </b>{{activity.place}}</p>
+          <p><b>人数 : </b>{{activity.number}}</p>
+          <p class="activity-detail">查看详情</p>
+        </div>
+      </a>    
+    </figure>
+  </div>
+</div>

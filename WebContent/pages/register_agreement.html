@@ -1,0 +1,12 @@
+<!-- 注册协议模态框 -->
+<div id="modal-register-agreement" class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <p class="modal-title" id="myModalLabel"><b>请复查以下协议。您必须同意这些协议条款才能继续。</b></p>
+  </div>
+  <div class="modal-body">
+    <textarea class="form-control" readonly="readonly">
+      {{agreement_content}}
+    </textarea>
+  </div>
+</div>

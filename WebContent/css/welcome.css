@@ -1,0 +1,164 @@
+#wrapper {
+	width: 100%;
+	margin-top: 7%;
+	margin-bottom: 3%;
+	padding:0;
+}
+#wrapper img {
+	width: 100%;
+}
+#wrapper .logo {
+	position: absolute;
+	width: 30%;
+	top: 35%;
+	left: 35%;
+	z-index: 50;
+}
+#wrapper .pad {
+	position: absolute;
+	width: 30%;
+	height: auto;	
+	left: 35%;
+	background-color: #fff;
+	z-index: 40;
+	transition: background-color 1s;
+}
+#wrapper .pad-image {
+	position: relative;
+	padding: 0;
+	left: 0;
+	top: 0;
+	float: left;
+	z-index: 40;
+	margin-left: -2px;
+	transition: z-index 1s;
+	transition-delay: 1s;
+	font-size: 0;
+	width:-moz-calc(100% + 4px);
+	width:-webkit-calc(100% + 4px);
+	width: calc(100%+ 4px);
+}
+#wrapper .lower {
+	z-index: 20;
+}
+#wrapper .button {
+	position: absolute;
+	border-radius: 50%;
+	width: 11%;
+	height: 11%;
+	z-index:15;
+	background-color: #fff;
+	transition: background-color 1s;
+}
+#wrapper .button-curtain {
+	z-index: 30;
+	background-color: transparent;
+	cursor: pointer;
+}
+#wrapper .button1 {
+	left: 72%;
+	top: 31.9%;	
+}
+#wrapper .button2 {
+	left: 64.1%;
+	top: 39%;	
+}
+#wrapper .button3 {
+	left: 80%;
+	top: 39%;	
+}
+#wrapper .button4 {
+	left: 72%;
+	top: 46.7%;
+}
+
+#wrapper .delay {
+	transition-delay: 1s;
+}
+#wrapper .animation1 {
+	transition: transform 2s;
+	transform: rotate(360deg) scale(0.25,0.25);
+}
+#wrapper .ani-yellow {
+	background-color: #F8CC37;
+}
+#wrapper .ani-green {
+	background-color: #749415;
+}
+#wrapper .ani-blue {
+	/*background-color: #2C62DE;*/
+	background-color: #1691BE;
+}
+#wrapper .ani-red {
+	background-color: #E72F09;
+}
+#wrapper .ani-black {
+	background-color: #000;
+}
+#wrapper .line {
+	position: relative;
+	border-top: .4em solid;
+	width: 0;
+	top: 40%;
+	left: 105%;
+	z-index: 45;
+	transition: width 1s;
+	text-align: right;
+}
+#wrapper .line1 {
+	border-color: #F8CC37; 
+}
+#wrapper .line2 {
+	border-color: #1691BE; 
+}
+#wrapper .line3 {
+	border-color: #E72F09;
+}
+#wrapper .line4 {
+	border-color: #749415;
+}
+#wrapper .p {
+	position: absolute;
+	font-weight: bold;
+	opacity: 0;
+	width: 0;
+	overflow: hidden;
+}
+#wrapper .p span {
+	margin-right: 3%;
+}
+#wrapper .p1 {
+	left: 360%;
+	color: #F8CC37;	
+}
+#wrapper .p2 {
+	left: 420%;
+	color: #1691BE;
+}
+#wrapper .p3 {
+	left: 300%;
+	color: #E72F09;
+}
+#wrapper .p4 {
+	left: 360%;
+	color: #749415;
+}
+#wrapper .ani-p {
+	transition: opacity 0.01s;
+	transition-delay: 0.85s;
+	width: 300%;
+	opacity: 1;
+	display: block;
+}
+#wrapper .ani-l1 {
+	width: 240%;
+}
+#wrapper .ani-l2 {
+	width: 300%;
+}
+#wrapper .ani-l3 {
+	width: 180%;
+}
+#wrapper .ani-l4 {
+	width: 240%;
+}

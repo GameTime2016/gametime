@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.PictureDao">
+
+<resultMap type="Picture" id="resultMapPicture">
+	<result column="GS_Picture" property="picCode" />
+	<result column="GS_PictureType" property="picType" />
+	<result column="GS_PictureName" property="picName" />
+	<result column="GS_PictureDesc" property="picDesc" />
+	<result column="GS_PictureWebAdress" property="picUrl" />
+	<result column="GS_ProductsCode" property="productCode" />
+	<result column="GS_PictureCrtDate" property="picCrtDate" />
+</resultMap>
+
+<select id="getPicture" parameterType="String" resultMap="resultMapPicture">
+	SELECT GS_PictureCode, GS_PictureType, GS_PictureName, GS_PictureDesc, GS_PictureWebAdress, GS_ProductsCode, GS_PictureCrtDate
+	From `GS_Picture`
+	WHERE GS_ProductsCode = #{code} AND GS_PictureType = #{type}
+</select> 
+
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.ProductDao">
+
+<resultMap type="Product" id="resultMapProduct">
+	<result column="GS_ProductsCode" property="productsCode" />
+	<result column="GS_ProductsName" property="productsName" />
+	<result column="GS_ProductsIssueDate" property="productsIssue" />
+	<result column="GS_ProductsCompany" property="productsCompany" />
+	<result column="GS_ProductsDesc" property="productsDesc" />
+	<result column="GS_ProductsPlayers" property="productsPlayers" />
+	<result column="GS_CategoryName" property="productsCategoryName" />
+	<result column="GS_PictureWebAdress" property="picture" />
+</resultMap>
+
+<select id="getProducts" parameterType="java.util.Map" resultMap="resultMapProduct">
+	SELECT pd.GS_ProductsCode, pd.GS_ProductsName, pd.GS_ProductsIssueDate, pd.GS_ProductsCompany, ct.GS_CategoryName, pt.GS_PictureWebAdress
+	FROM gs_products pd, gs_category ct, gs_picture pt
+	<if test="Platform != null and Platform != ''">
+		, GS_ProductsItem pi
+    </if>
+	WHERE pd.GS_CategoryID = ct.GS_CategoryID AND pd.GS_ProductsCode = pt.GS_ProductsCode AND pt.GS_PictureType = 'H'
+	<if test="Category != null and Category != ''">
+        AND pd.GS_CategoryID = #{Category}
+    </if>
+	<if test="Platform != null and Platform != ''">
+		AND pd.GS_ProductsCode = pi.GS_ProductsCode
+        AND pi.GS_PlatformID = #{Platform}
+    </if>
+	<if test="Hot != null and Hot != ''">
+        AND pd.GS_ProductsHot = #{Hot}
+    </if>
+	<if test="Discount != null and Discount != ''">
+        AND pd.GS_ProductsDiscount = #{Discount}
+    </if>
+	<if test="Name != null and Name != ''">
+        AND pd.GS_ProductsName like CONCAT('%', #{Name}, '%')
+    </if>
+	<if test="Start != null and Start >0 and Count != null and Count > 0">
+       Limit #{Start}, #{Count}
+    </if>
+</select> 
+
+<select id="getProduct" parameterType="String" resultMap="resultMapProduct">
+	SELECT pd.GS_ProductsCode, pd.GS_ProductsName, pd.GS_ProductsIssueDate, pd.GS_ProductsCompany,pd.GS_ProductsDesc,pd.GS_ProductsPlayers, ct.GS_CategoryName, pt.GS_PictureWebAdress
+	FROM gs_products pd, gs_category ct, gs_picture pt
+	WHERE pd.GS_ProductsCode = #{productCode}
+	AND pd.GS_CategoryID = ct.GS_CategoryID AND pd.GS_ProductsCode = pt.GS_ProductsCode AND pt.GS_PictureType = 'H' 
+</select> 
+</mapper>

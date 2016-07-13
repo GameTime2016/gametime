@@ -1,0 +1,2318 @@
+@media only screen  and (max-width: 992px) {
+ div {
+    font-size: 14px; 
+  }
+  #video-panel .game-descr-wrapper {
+   padding:0;
+  }
+  #logo-img {
+    display: none;
+  }
+  #nav-search {
+    display: none;
+  }
+  .account-panel .account-sidebar li {
+    width: 33%;
+  }
+  .account-panel .account-content-panel {
+    margin-top: 2em;
+  }
+}
+@media only screen and (max-width: 768px) { 
+  div { 
+    font-size: 12px; 
+  }
+  #logo-img {
+    display: none;
+  }
+  #nav-search {
+    display: none;
+  }
+  #video-panel .game-descr-wrapper {
+    padding-top: 0.5em;
+  }
+  #video-panel #game-pic {
+    display: none;
+  }
+  #video-panel #video-control {
+    display: none;
+  }
+  #top-navbar #navbar .sub-menu, #top-navbar-tidy #navbar .sub-menu{
+    width: 40%;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  #top-navbar #navbar .sub-menu li a, #top-navbar-tidy #navbar .sub-menu li a {
+    color: #fff;
+  }
+  #top-navbar #navbar .sub-menu li, #top-navbar-tidy #navbar .sub-menu li {
+    border: none;
+  }
+  #top-navbar #navbar .sub-menu li:hover, #top-navbar-tidy #navbar .sub-menu li:hover {
+    background-color: transparent;
+    border:none;
+  }
+  #navbar form {
+    padding: 0;
+    margin: 0;
+  }
+  #top-navbar-tidy #navbar .sub-menu-game {
+    width: 100%;
+  }
+  #top-navbar-tidy #navbar .sub-menu-game li {
+    width: 20%;
+  }
+  .pic-viewer .viewer-icon {
+    font-size: 1.8em;
+  }
+  .account-panel .account-sidebar li {
+    width: 50%;
+  }
+  #item-info-panel #item-image {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) { 
+  div { 
+    font-size: 10px; 
+  }
+  .grid figure.effect-apollo figcaption  {
+    padding: 5%;
+    font-size: 6px;
+  }
+  .grid figure.effect-apollo p {
+    margin-top: 0;
+  }
+  #btn-log {
+    font-size: .9em;
+  }
+}
+@font-face{
+  font-family: LEVIBRUSH;
+  src: url('../fonts/lib/prismfont_CLv3.ttf');
+  src: url('../fonts/lib/prismfont_clv3-webfont.eot');
+  src: url('../fonts/lib/prismfont_clv3-webfont.woff');
+}
+@font-face{
+  font-family: Prisma;
+  src: url('../fonts/lib/Prisma.ttf');
+  src: url('../fonts/lib/Prisma.otf');
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: Microsoft YaHei;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body > #part1 {
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 10em;
+  border-top: 1px solid #000;
+}
+body > #part2 {
+ position: relative;
+ margin-top: -10em;
+ height: 10em;
+}
+a {
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+.carousel a {
+  cursor: pointer; 
+}
+input[type="checkbox"]{
+  -ms-transform: scale(1.4); /* IE */
+  -moz-transform: scale(1.4); /* FF */
+  -webkit-transform: scale(1.4); /* Safari and Chrome */
+  -o-transform: scale(1.4); /* Opera */
+}
+/*表单验证样式*/
+.warning-info {
+  font-size: 0.8em;
+  color: #A94442;
+}
+.notify-info {
+  font-size: 0.8em;
+  color: #438345;
+}
+.warning-icon-success {
+  margin-top: 5px;
+  font-size: 0.9em; 
+  color: #438345;
+}
+.warning-icon-error {
+  margin-top: 5px;
+  font-size: 0.9em; 
+  color: #A94442;
+}
+.validation-error {
+  border: 1px solid #A94442;
+}
+.validation-success {
+  border: 1px solid #438345;
+}
+.validation-error:focus {
+  border: 1px solid #A94442;
+  box-shadow: 0 0 7px #A94442;
+  -webkit-box-shadow: 0 0 7px #A94442;
+  -moz-box-shadow: 0 0 7px #A94442;
+}
+.validation-success:focus {
+  border: 1px solid #438345;
+  box-shadow: 0 0 7px #438345;
+  -webkit-box-shadow: 0 0 7px #438345;
+  -moz-box-shadow: 0 0 7px #438345;
+}
+.icon-modify-success {
+  font-size: 2.2em;
+  color: green;
+}
+/*顶端导航栏*/
+#top-navbar {
+  background: rgba(0,0,0,0.85);
+  border: none;
+}
+#top-navbar .navbar-brand, #top-navbar-tidy .navbar-brand{
+  font-size: 2em;
+  font-family: LEVIBRUSH;
+  color: #fff;
+}
+/*#top-navbar img, #top-navbar-tidy img{
+  margin-top: 8px;
+  width: 100%;
+}*/
+#top-navbar-tidy {
+  background: rgba(0,0,0,0.85);
+  border: none;
+}
+#navbar a {
+  color: #ddd;
+}
+#navbar a:hover {
+  color: #bbb;
+}
+#navbar #btn-log {
+  border-radius: 2px;
+}
+#navbar form {
+  border: none;
+}
+.navbar-nav li .navbar-form {
+  box-shadow: none;
+}
+#navbar #nav-title-log {
+  padding-left: 1em; 
+}
+#navbar #nav-title-name {
+   min-width: 10em; 
+}
+#navbar .sub-menu {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  list-style: none;
+  padding: 0px;
+  font-size: 0;
+  box-shadow: 0px 2px 3px #ccc;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-transition: opacity .15s ease .1s;
+  -moz-transition: opacity .15s ease .1s;
+  -o-transition: opacity .15s ease .1s;
+  -ms-transition: opacity .15s ease .1s;
+  transition: opacity .15s ease .1s;
+}
+#navbar .sub-menu li a {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  color: #000;
+}
+#navbar .sub-menu li {
+  width: 100%;
+  height: 0;
+  padding: 0;
+  text-align: center;
+  border-left: 5px solid #fff;
+  -webkit-transition: height .25s ease .1s;
+  -moz-transition: height .25s ease .1s;
+  -o-transition: height .25s ease .1s;
+  -ms-transition: height .25s ease .1s;
+  transition: height .25s ease .1s;
+}
+#navbar .sub-menu li button {
+  width: 90%;
+  border-radius: 2px; 
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+#navbar .sub-menu li:hover {
+  background-color: #F2F2F2;
+  border-left: 5px solid #FF9933;
+}
+#navbar .sub-menu li.no-effect {
+  border-left: none;
+}
+#navbar .sub-menu li.no-effect:hover {
+  border-left: none;
+  background-color: #fff;
+}
+#navbar li:hover > .sub-menu {
+  min-width: 10em;
+  opacity: 1;
+  height: auto; 
+  font-size: 1em;
+}
+#navbar li:hover > .sub-menu li {
+  height: 40px;
+  overflow: hidden;
+}
+#navbar li:hover > .sub-menu li a{
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+#navbar .sub-menu-game {
+  width: 200%;
+  padding: 0;
+}
+#navbar .sub-menu-game li {
+  display: inline-block;
+  width: 49%;
+}
+#navbar .sub-menu-community {
+  width: 150%;
+  padding: 0;
+}
+/*header样式*/
+#header {
+  margin-top: 50px;
+}
+#logo-img {
+  margin-top:30px;
+}
+#header-nav {
+  margin-top: 80px;
+  padding: 0;
+}
+#header-nav .nav {
+  margin: 0;
+}
+#header-nav .menu-list {
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  float: left;
+}
+#header-nav #search-bar {
+  width: 35%;
+  padding-top: 10px;
+  float: left;
+  margin-left: 3%;
+}
+#header-nav a {
+  color: #000;
+  font-size: 1.5em;
+  text-decoration: none;
+  background-color: transparent;
+}
+#header-nav a:hover {
+  color: #00CCFF;
+}
+#header-nav .tab-panel {
+  position: relative;
+  z-index: 50;
+  left: -100%;
+  opacity: 0;
+  width: 500%;
+  height: 0;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 2em;
+  padding: 0 2em;
+  -webkit-transition: opacity .3s ease .2s;
+  -moz-transition: opacity .3s ease .2s;
+  -o-transition: opacity .3s ease .2s;
+  -ms-transition: opacity .3s ease .2s;
+  transition: opacity .3s ease .2s;
+}
+#header-nav #tab-panel1 {
+  left: -100%;
+}
+#header-nav #tab-panel2 {
+  left: -200%;
+}
+#header-nav #tab-panel3 {
+  left: -300%;
+}
+#header-nav .menu-list .menu-tab {
+  border: none;
+  border-bottom: 1px solid #bbb;
+  cursor: pointer;
+}
+#header-nav .menu-list .select, #header-nav .menu-list:hover .menu-tab{
+  border: 1px solid #bbb; 
+  border-bottom: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;  
+}
+#header-nav .menu-list:hover > .tab-panel {
+  opacity: 1;
+  height: auto;
+  padding-bottom: 2em;
+  min-height: 10em;
+}
+.tab-panel .sort-title {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+}
+.tab-panel .sub-menu-list {
+  font-size: 0.7em;
+  width: 100%; 
+  text-align: left;
+}
+.tab-panel .sub-menu-list li {
+  display: inline-block;
+  width: 24%;
+  margin-bottom: .8em;
+}
+.tab-panel .sub-menu-list .half-width {
+  width: 45%;
+} 
+.tab-panel .sub-menu-list .full-width {
+  width: 100%;
+} 
+#header-nav .sub-menu-list a:hover {
+  color: #000;
+}
+#header-nav .sub-menu-list a {
+  width: 100%;
+  text-align: left;
+  padding-left: 0.5em;
+  display: inline-block;
+  border-left: 5px solid #fff;
+  color: #777;  
+}
+#header-nav .sub-menu-list a:hover {
+  border-left: 5px solid #FF9933;
+}
+
+/*首页样式*/
+#homepage-panel {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+/*轮播插件*/
+.carousel-inner img {
+  width: 100%;
+}
+#game-menu-slidedown {
+  width: 100%;
+  height: 150px;
+  background-color: #FF9900;
+  display: none;
+  opacity: 0.9;
+}
+#consoles-panel {
+  margin-top: 2em;
+}
+#consoles-panel .console-wrapper1 {
+  padding-right: 1%;
+}
+#consoles-panel .console-wrapper2 {
+  padding-left: 1%;
+}
+#console-menu-slidedown {
+  width: 100%;
+  height: 150px;
+  background-color: #66CCFF;
+  display: none;
+  opacity: 0.8;
+}
+#consoles-panel div {
+  padding: 0;
+}
+/*商品标签样式*/
+.thumbnail:hover .product-tags{
+  width: 0; 
+}
+.product-tags {
+  position: absolute;
+  right: -2%;
+  width: 35%;
+  z-index: 80;
+  transition: width .6s;
+  -moz-transition: width .6s;
+  -webkit-transition: width .6s;
+  -o-transition: width .6s;
+}
+.tag {
+  width: 100%;
+  min-height: 2em;
+  line-height: 2em;
+  color: #fff;
+  margin-top: .6em;
+  font-weight: bold;
+  opacity: .9;
+  box-shadow:3px 3px 4px #000;
+  overflow: hidden;
+}
+.hot-product {
+  background-color: #CC0000;
+}
+.sale-product {
+  background-color: #339900;
+}
+#hot-products-panel, #sale-products-panel {
+  margin-top: 1em;
+  text-align: center;
+}
+#hot-products-panel h2, #sale-products-panel h2 {
+  font-size: 2em;
+}
+#hot-products-panel h4, #sale-products-panel h4{
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 1em;
+}
+#hot-products-panel h4 a, #sale-products-panel h4 a{
+  padding: 0 5px;
+  text-decoration: none;
+  border:2px solid;
+  color: #000;
+}
+#hot-products-panel .grid figure, #sale-products-panel .grid figure {
+  font-size: .8em;
+}
+.thumbnail {
+  width: 100%;
+  border:none;
+  box-shadow: none;
+  padding: 0;
+  background-color: transparent;
+}
+.thumbnail .game-caption {
+  display: inline-block;
+  width: 100%;
+}
+.thumbnail .game-caption h3 {
+  height: 3em;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5em 0;
+  overflow: hidden;
+}
+.thumbnail .game-caption a{
+  color: #333;
+}
+#footer {
+  width: 100%;
+  min-height: 10em;
+  color: #bbb;
+  text-align: center;
+  background-color: #000;
+  padding: 2em 0;
+  clear: both;
+}
+.footer_content {
+  width: 60%;
+  margin-left: 20%;
+}
+.footer_content a {
+  color: #fff;
+  text-decoration: none;
+}
+/*产品页面style*/
+#products-content {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.breadcrumb{
+  padding: 0;
+}
+.breadcrumb {
+  background-color: transparent;
+}
+.breadcrumb a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1em;
+}
+.breadcrumb a:hover {
+  color: #00CCFF;
+}
+#product-index {
+  background-color: #F8F8F8;
+  border: 1px solid #E7E7E7;
+}
+#product-index hr {
+  margin: 0;
+}
+#product-index ul {
+}
+#product-index ul li{
+  display: inline-block;
+}
+#product-index ul li a{
+   color: #777777;
+}
+#product-index ul li:hover a{
+  border-radius: 0;
+}
+#product-index .active a{
+  background-color: rgb(22, 145, 190);
+  color: #fff;
+}
+#product-index .index-title {
+  font-weight: bold;
+}
+#product-index .index-title a{
+  color: #333;
+}
+#product-index .index-title:hover a{
+  background-color: transparent;
+}
+#product-index .navbar-brand {
+  font-size: .9em;
+  font-weight: bold;
+}
+.product-wrapper {
+  margin-bottom: 1em;
+}
+#products-render {
+  margin-top: 3em;
+  padding: 0;
+}
+#pager {
+  text-align: center;
+  font-size: 1.3em;
+}
+#pager a {
+  font-size: 1.1em;
+}
+#no-item-panel p{
+  text-align: center;
+  font-size: 1.5em;
+}
+/*登录页面*/
+#login {
+  padding-top: 3em;
+  font-size: 1.2em;
+}
+#login-panel input {
+  width: 100%;
+  border-radius: 0;
+}
+#login-panel button {
+  width: 100%;
+  font-size: 1.2em;
+  border-radius: 0;
+}
+#login-panel button a {
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+}
+
+#login-panel .error-info-panel {
+  margin: 0.5em 0;
+}
+#login-panel .code-panel {
+  padding: 0;
+}
+#login-panel #login-notify {
+  color: #CC3333;
+}
+.code-panel img {
+  width: 100%;
+}
+.code-panel span{
+  font-size: 0.9em;
+  cursor: pointer;
+}
+/*modal login */
+#modal-login {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+}
+#modal-login img {
+  position: relative;
+  width: 100%;
+  opacity: .9;
+}
+#modal-login #modal-close {
+  position: absolute;
+  width: 10%;
+  height: 15%;
+  top: 6%;
+  right: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+#modal-login #modal-close span{
+  display:inline-block; 
+  width:100%; 
+  height:2px; 
+  background:#fff; 
+  font-size:0; 
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg);   /* IE 9 */
+  -moz-transform:rotate(45deg);  /* Firefox */
+  -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+  -o-transform:rotate(45deg);  /* Opera */
+}
+#modal-login #modal-close span:after { 
+  content:'.'; 
+  display:block; 
+  width:100%; 
+  height:2px; 
+  background:#fff;
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);   /* IE 9 */
+  -moz-transform:rotate(-90deg);  /* Firefox */
+  -webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+  -o-transform:rotate(-90deg);  /* Opera */
+}
+#modal-login .modal-body {
+  margin-top: 25%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  height: auto;
+  background: transparent;
+  text-align: center;
+}
+#modal-login #bc-image {
+  position: relative;
+  padding: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+#modal-login #input1 input, #modal-login #input2 input{
+  border-radius: 0;
+  height: 100%;
+  width: 66%;
+  display: inline-block;
+}
+#modal-login #login-form #input1 {
+  text-align: left;
+  position: absolute;
+  z-index: 20;
+  top: 22%;
+  left: 30%;
+  width: 60%;
+  height: 10%;
+  margin-right: 2%;
+}
+#modal-login .error-info-panel {
+  display: inline-block;
+}
+#modal-login #login-form #input2 {
+  text-align: left;
+  position: absolute;
+  z-index: 20;
+  top: 34%;
+  left: 30%;
+  width: 60%;
+  height: 10%;
+  margin-right: 5px;
+}
+#modal-login #login-form .btn-pad {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-weight: bold;
+  padding-top: 31%;
+  color: #ddd;
+  -webkit-box-shadow:inset 0 0 3em #888;  
+  -moz-box-shadow:inset 0 0 3em #888;  
+  box-shadow:0px 8px 10px 0px rgba(0, 0, 0, .6); 
+  background: #111;
+  background: -moz-linear-gradient(#666, #111);
+  background: -ms-linear-gradient(#666, #111);
+  background: -o-linear-gradient(#666, #111);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(#111));
+  background: -webkit-linear-gradient(#666, #111);
+  background: linear-gradient(#666, #111); 
+  cursor: pointer;
+}
+#modal-login #login-form .btn-title {
+  position: absolute;
+  top: 15%;
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  border-radius: 50%;
+  font-size: 1.2em;
+  padding-top: 16%;
+  background: #333;
+  background: -moz-linear-gradient(#111, #333);
+  background: -ms-linear-gradient(#111, #333);
+  background: -o-linear-gradient(#111, #333);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#111), to(#333));
+  background: -webkit-linear-gradient(#111, #333);
+  background: linear-gradient(#111, #333);
+}
+#modal-login #login-form .btn-pad:hover {
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,.5);
+}
+#btn-login{
+  width: 13%;
+  height: 20%;
+  position: absolute;
+  z-index: 30;
+  top: 52%;
+  left: 31%;
+}
+#btn-register{
+  width: 13%;
+  height: 20%;
+  position: absolute;
+  z-index: 30;
+  top: 52%;
+  left: 56%;
+}
+#code-panel {
+  position: absolute;
+  z-index: 20;
+  top: 45%;
+  left: 30%;
+  width: 60%;
+  height: 8%;
+}
+#code-panel div {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  float: left;
+}
+#code-panel #d1 {
+  width: 30%;
+  margin-right: 2%;
+}
+#code-panel #d1 input{
+  height: 100%;
+}
+#code-panel #d2 {
+  width: 34%;
+  margin-right: 5px;
+}
+#code-panel #d2 img{
+  width: 100%;
+}
+#code-panel #d3 {
+  width: 25%;  
+ 
+}
+#code-panel #d3 span {
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  padding-top: 5%;
+  text-align: left;
+}
+/*注册页面*/
+#register-panel {
+  margin-top: 50px;
+  font-size: 1.2em;
+}
+#register-panel h2 {
+  margin-bottom: 20px;
+}
+#register-panel button {
+  width: 100%;
+  font-size: 1.2em;
+}
+#agreement-panel {
+  font-size: 0.9em; 
+}
+#register-panel #checkbox-agree {
+  border: 4px solid;
+}
+#agreement {
+  display: inline-block;
+  margin-left: 5px;
+}
+/*account页面样式*/
+.account-panel {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+/*account页面边导航栏样式*/
+.account-sidebar .sidebar-nav {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.account-sidebar li {
+  text-align: left;
+  width: 100%;
+  font-size: 1.5em;
+  border: 1px solid #fff;
+  float: left;
+}
+.account-sidebar li a {
+  background-color: #FFCC33;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+  padding-top: 20px;
+  padding-left: 25%;
+}
+.account-sidebar li a span {
+  margin-right: 10px;
+}
+.account-sidebar li a:hover
+ {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+.account-sidebar li.sidebar-selected a{
+  background-color: #FF9900;
+  color: #FFFFFF;  
+}
+.account-sidebar li .selected {
+  background-color: #FF9900;
+  color: #FFFFFF; 
+}
+/*个人信息页面样式*/
+.account-content-panel h2 {
+  margin: 0;
+}
+#account-info-table td {
+  border: none;
+}
+#account-info-table .info-title {
+  text-align: left;
+  width: 15%;
+  font-size: 1.5em;
+}
+#account-info-table .info-content {
+  width: 30%;
+  font-size: 1.3em;
+  color: #0099FF;
+  vertical-align: middle;
+}
+#account-info-table .collapse-id {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+  width: 100%;
+}
+#account-security {
+  margin-top: 2em;
+}
+#account-security .jumbotron {
+  background-color: #eee;
+}
+#account-security .jumbotron .security-icon {
+  font-size: 4.5em;
+}
+#account-security .jumbotron .security-icon-success {
+  color: #66CC33;
+  margin-left: 3px;
+}
+#account-security .jumbotron .security-icon-error {
+  color: #CC3333;
+  margin-left: 10px;
+}
+.status-info p {
+  margin: 0;
+  font-size: 1.3em; 
+}
+.status-info .sec-tag {
+  color: #0099FF;
+}
+.sec-oporation {
+  color: #CC3333;
+}
+/*我的订单页面样式*/
+#account-order-panel h2 {
+  margin: 0;
+}
+#order-table th {
+  text-align: center;
+  border: none;
+  font-size: 1.2em;
+}
+#order-list {
+  text-align: center;
+  font-size: 1.2em;
+}
+#order-list .panel-heading {
+  text-align: left;
+  color: #000;
+}
+/*我的收藏页面*/
+#account-collection figure {
+  background-color: #000;
+  border: 5px solid #000;
+}
+#account-collection .icon-delete {
+  position: absolute;
+  right: 8px;
+  top: -6px;
+  z-index: 50;
+  background-color: #000;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.5em;
+}
+/*#account-collection .thumbnail {
+  border: 1px solid red;
+}
+.collection-game-wrapper {
+  border: 1px solid red; 
+}*/
+/*我的账单页面*/
+#account-bill .bill-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#account-bill .jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#account-bill .bill-explaination {
+  font-size: 1.2em;
+}
+#account-bill .currency {
+  font-size: 1.7em;
+  color: #000;
+}
+#account-bill .bill-price {
+  font-size: 3.0em;
+}
+#account-bill .bill-price-deposit {
+  color: #0099FF;
+}
+#account-bill .bill-price-rental {
+  color: #CC0033;
+}
+#account-bill .bill-price-balance {
+  color: #009900;
+}
+#account-bill #collapse-bar {
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 10px;
+}
+#bill-detail .panel-body {
+  margin: 0;
+  padding: 0;
+}
+#bill-detail table {
+  text-align: center;
+}
+#bill-detail table th {
+  font-weight: bold;
+  font-size: 1.0em;
+
+}
+/*地址页面*/
+#adress-wrapper {
+  width: 80%;
+  margin-left: 5%;
+}
+#adress-wrapper input,#adress-wrapper textarea {
+  border-radius: 0;
+}
+#adress-wrapper .necessary{
+  color: red;
+}
+#adress-wrapper label {
+  font-size: 1.1em;
+  font-weight: normal;
+}
+#adress-wrapper button {
+  border-radius: 0;
+}
+#adress-wrapper .input-group-addon {
+  border-radius: 0;
+  background-color: transparent;
+}
+#adress-wrapper .address-dropdown-menu {
+  width: 100%;
+  border-radius: 0;
+}
+/*游戏车页面*/
+#cart-panel {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+/*边侧导航栏*/
+#cart-sidebar .sidebar-nav {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+#cart-sidebar li {
+  text-align: left;
+  width: 100%;
+  font-size: 1.5em;
+  border: 1px solid #fff;
+}
+#cart-sidebar li a
+ {
+  background-color: #FFCC33;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+  padding-top: 20px;
+  padding-left: 25%;
+}
+#cart-sidebar li a span {
+  margin-right: 10px;
+}
+#cart-sidebar li a:hover {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+#cart-sidebar li .selected {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+#cart-sidebar li.sidebar-selected a {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+/*购物车页面*/
+#shopping-cart  img {
+  width: 100%;
+}
+#shopping-cart #shopping-table {
+  text-align: center;
+  font-size: 1.2em;
+}
+#shopping-cart #shopping-table th {
+  text-align: center;
+}
+#shopping-cart #shopping-table td {
+  vertical-align: middle;
+}
+#shopping-cart .cart-number-input {
+  width: 60%;
+  text-align: center;
+}
+#shopping-cart .glyphicon-remove {
+  color: #CC0033;
+}
+#summary-panel {
+}
+#summary-panel #balance-btn {
+  width: 100%;
+  font-size: 1.2em;
+  border-radius: 0;
+}
+#summary-panel #summary-table {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+#summary-panel .balance {
+  color: #0099FF;
+  font-size: 1.4em;
+}
+#summary-panel .item-number {
+  color: #0099FF;
+  font-size: 1.4em;
+}
+#remind-area {
+  color: #CC0033;
+  font-size: 1.3em;
+}
+#shopping-cart-panel .form-control-feedback {
+    font-size: 0;
+}
+/*租赁车页面*/
+#rental-cart  img {
+  width: 100%;
+}
+#rental-cart #rental-table {
+  text-align: center;
+  font-size: 1.2em;
+}
+#rental-cart #rental-table th {
+  text-align: center;
+}
+#rental-cart #rental-table td {
+  vertical-align: middle;
+}
+#rental-cart .glyphicon-remove {
+  color: #CC0033;
+}
+/*协议模态框*/
+#modal-register-agreement textarea {
+  resize: none;
+  height: 600px;
+}
+/*loading动画*/
+.loading-panel {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.7);
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  text-align: center;
+}
+/*修改密码页面*/
+#account-modify {
+  margin-top: 20px;
+  font-size: 1.3em;
+}
+#account-modify label {
+  font-weight: normal;
+}
+#account-modify button {
+  border-radius: 1px;
+  width: 100%;
+  margin-top: 10px;
+}
+/*密码找回页面*/
+#retrieve-panel {
+  margin-top: 20px;
+}
+#retrieve-panel h2{
+  margin-bottom: 30px;
+}
+#retrieve-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+}
+#retrieve-panel ul li {
+  font-size: 1.4em;
+  cursor: pointer;
+  width: 50%;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  height: 60px;
+  padding-top: 20px;
+  float: left;
+}
+#retrieve-panel ul .active {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#retrieve-panel li a {
+  color: #000;
+}
+#retrieve-panel .check-panel {
+  margin-top: 0;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  margin-bottom: 120px;
+  font-size: 1.4em;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#retrieve-panel .check-panel label {
+  font-weight: normal;
+}
+#retrieve-panel .form-group {
+  margin-top: 25px;
+}
+#retrieve-panel button {
+  border-radius: 3px;
+}
+#retrieve-panel .btn-submit {
+  width: 100%;
+}
+#retrieve-panel .notify-panel {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+/*绑定邮箱页面*/
+#bind-email {
+  padding-top: 100px;
+  font-size: 1.4em;
+}
+#bind-email button {
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+/*修改页面*/
+.step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 70px;
+}
+.step-list li {
+  font-size: 1.4em;
+  cursor: pointer;
+  width: 33.33%;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  display: inline-block;
+  height: 70px;
+  padding-top: 10px;
+  float: left;
+  color: #ccc;
+}
+.step-list .actived {
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #000;
+}
+.step-content {
+  margin-top: 0;
+  width: 100%;
+  height: 350px;
+  padding-top: 55px;
+  padding-bottom: 30px;
+  margin-bottom: 120px;
+  font-size: 1.4em;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; 
+}
+.step-content label {
+  font-weight: normal;
+}
+.step-content .form-group {
+  margin-top: 25px;
+}
+.step-content button {
+  border-radius: 3px;
+}
+.step-content .btn-submit {
+  width: 100%;
+}
+.result-panel {
+  padding-top: 150px;
+}
+.result-panel p{
+  padding-top: 10px;
+}
+/*修改手机页面*/
+#modify-phone {
+  font-size: 1.0em;
+}
+/*修改邮箱页面*/
+#modify-email {
+  font-size: 1.0em;
+}
+/*产品详细页面*/
+#product-detail-content {
+  width: 100%;
+  margin:0;
+  padding: 0;
+  font-size: 1em;
+}
+#product-detail-content #video-panel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  max-height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+#product-detail-content video {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+#video-panel .video-curtain {
+  position: absolute;
+  display: block;
+  z-index: 50;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10em; 
+  background: rgba(0, 0, 0, 0.5);
+}
+.video-curtain .wrapper {
+  position: relative;
+  height: 10em;
+}
+#video-panel .game-pic-wrapper {
+  padding: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.game-pic-wrapper img {  
+  height: 12em;
+}
+#video-panel .game-info-wrapper {
+  padding: 0;
+  height: 10em;
+  padding-left: 5%;
+}
+#video-panel .game-name-wrapper {
+  text-align: left;
+  height: 3em;
+  padding-top: 0.5em;
+}
+.game-name-wrapper span {
+  color: #eee;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+#video-panel .game-descr-wrapper {
+  color: #fff;
+  font-size: 1.0em;
+  opacity: 0.7;
+  height: 3.5em;
+  padding-top: 1.2em;
+  text-align: left;
+  overflow: hidden;
+}
+.game-descr-wrapper .info-title {
+  padding-right: 1em;
+}
+#video-panel .game-try-wrapper {
+  text-align: left;
+  width: 100%;
+  height: 3em;
+  opacity: 0.9;
+}
+.game-try-wrapper button {
+  display: inline-block;
+  border-radius: 0;
+  width: 29%;
+  font-size: 1.0em;
+  margin-right: 1%;
+  height: 2.5em;
+}
+#video-panel .video-control-wrapper {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 1em;
+}
+#video-panel .video-control-wrapper span {
+  font-size: 2.8em;
+  float: left;
+  width: 25%;
+  color: #aaa;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 12%;
+}
+#video-panel .video-control-wrapper #span-pg {
+  margin-top: 0;
+}
+.video-control-wrapper span img {
+  width: 100%;
+}
+#game-info-panel {
+  font-size: 1.1em;
+  width: 100%;
+  padding: 0;
+}
+.panel-wrapper {
+
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.bc-gray {
+  background-color: #F5F5F5;
+}
+.panel-title {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.detail-wrapper {
+  color: #444;
+}
+.info-dl dt {
+  color: #777;
+  text-align: left;
+  font-weight: normal;
+  padding-bottom: 0.4em;
+}
+.info-dl dd {
+  padding-bottom: 0.4em;
+}
+.screenshot-wrapper {
+  width: 100%;
+}
+.screenshot-wrapper .item img {
+ width: 100%;
+}
+.screenshot-wrapper .item a {
+  display: inline-block;
+  float: left;
+  width: 24.25%;
+  cursor: pointer;
+  margin-right: 1%;
+}
+.screenshot-wrapper .item a:last-child {
+  margin-right: 0;
+}
+.screenshot-wrapper ol {
+  display: none;
+}
+.screenshot-wrapper .carousel-control {
+  width: 5%;
+}
+.pic-viewer {
+  position: fixed;
+  z-index: 100;
+  width: 80%;
+  height: auto;
+  left: 10%;
+  top: 15%;
+  padding: 1em;
+  background: rgba(0,0,0,0.8);
+}
+.close-viewer-wrapper {
+  position: absolute;
+  right: 1em;
+}
+.close-viewer-wrapper span {
+  color: #ccc;
+  cursor: pointer;
+}
+.pic-wrapper {
+  width: 88%;
+  padding: 1em 0;
+  float: left;
+}
+.pic-wrapper img {
+  width: 100%;
+}
+.viewer-control {
+  width: 6%;
+  float: left;
+  padding: 0;
+  padding-top: 25%;
+  text-align: center;
+}
+.viewer-control span {
+  display: inline-block;
+  width: 100%;
+  color: #ccc;
+  cursor: pointer;
+}
+.viewer-icon {
+  font-size: 2.7em;
+}
+#similiar-wrapper .game-caption h3 a {
+  font-size: 0.9em;
+}
+#rating-panel {
+  padding: 0;
+  margin: 0;
+  /*border: 1px solid blue;*/
+}
+#rating-panel > div {
+  width: 80%;
+  margin-left: 10%;
+  position: relative;
+}
+#rating-panel img {
+  width: 100%;
+  /*border: 1px solid green;*/
+}
+#rating-panel #rating-num {
+  position: absolute;
+  top: 27%;
+  width: 100%;
+  height: 45%;
+  /*border: 1px solid red;*/
+}
+#rating-num span {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  line-height: 100%;
+  font-weight: bold;
+  /*border: 1px solid #000;*/
+}
+#rating-num #span1 {
+  height: 20%;
+}
+#rating-num #span2 {
+  height: 80%;
+  letter-spacing: 3px;  
+}
+/*社区header样式*/
+#profile-panel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  max-height: 350px;
+  overflow: hidden;
+}
+#profile-panel #profile-bcg {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  position: relative;
+  filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    
+    -webkit-filter: blur(8px); /* Chrome, Opera */
+       -moz-filter: blur(8px);
+        -ms-filter: blur(8px);    
+            filter: blur(8px);
+    
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+#profile-curtain {
+  position: absolute;
+  display: block;
+  text-align: center;
+  top:8em;
+  left: 0;
+  width: 100%;
+  height: 10em; 
+  z-index: 20;
+}
+#profile-curtain #profile-wrapper {
+  display: inline-block;
+  width: 20em;
+  height: 10em;
+  background: rgba(0, 0, 0, 0.5);
+  padding-left: 6em;
+  z-index: 10;
+  text-align: left;
+}
+#profile-wrapper #portrait-wrapper {
+  display: inline-block;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  overflow: hidden; 
+  border: 0.5em transparent solid;
+  z-index: 20;
+  margin-left: -11em;
+}
+#portrait-wrapper img {
+  width: 100%;
+}
+#profile-wrapper #brief-wrapper {
+  display: inline-block;
+  width: 14em;
+  height: 10em;
+  overflow: hidden; 
+  z-index: 20;
+  padding-top: 2em;
+}
+#brief-wrapper p {
+  color: #fff;
+  opacity: 0.85;
+}
+#brief-wrapper #gender{
+  font-weight: bold;
+  font-size: 1.8em;
+}
+#gender span {
+  color: #33CCFF;
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+#brief-wrapper #message{
+  font-size: 1.2em;
+  opacity: 0.6;
+}
+#message span {
+  color: #00CC66;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+#profile-curtain #filling-left-wrapper {
+  width: 5em;
+  height: 10em;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10em 0 0 10em ;
+  -webkit-border-radius: 10em 0 0 10em ;
+  z-index: 10; 
+}
+#profile-curtain #filling-right-wrapper {
+  width: 5em;
+  height: 10em;
+  overflow: hidden;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 10em 10em 0;
+  -webkit-border-radius: 0 10em 10em 0;
+  z-index: 10; 
+}
+/*社区样式*/
+#community-home {
+  margin-bottom: 1em;
+}
+#community-home .wrapper {
+  display: inline-block;
+  margin: 0;
+  height: 14em;
+  padding:0 3px;
+  margin-bottom: 6px; 
+}
+#community-home .panel {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+  color: #000;
+  padding: 1em;
+  padding-left: 2em;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+#community-home hr {
+  padding: 0.2em;
+  margin: 0.1em;
+}
+#community-home .line1 {
+  line-height: 2em;
+  height: 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#community-home .line1 .operation {
+  display: inline-block;
+  float: right;
+  line-height: 2em;
+  font-size: 1.1em;
+  margin-right: 1em;
+  color: #000;
+}
+#community-home .line1 .operation:hover {
+  color: rgb(233, 147, 26);
+}
+#community-home .line1 img {
+  vertical-align: bottom;
+  height: 2em;
+}
+#intro-panel .line1 .number {
+  font-size: 1.4em;
+  margin-left: 0.5em;
+}
+#intro-panel .line1 .title {
+  font-weight: normal;
+}
+#intro-panel img {
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+  margin-right: 0.5em;  
+}
+#intro-panel .id {
+  font-weight: bold;
+}
+#intro-panel .account {
+  display: inline-block;
+  width: 40%;
+}
+#intro-panel .status a{
+  font-size: .9em;
+  font-weight: bold;
+  color: #339933;
+}
+#intro-panel .line3 .status a{
+  color: #CC3333;
+}
+#intro-panel .line2 {
+  font-size: 1.2em;
+  padding-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+#intro-panel .line3 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+#intro-panel .line2 img {
+  background-color: #5392D8;
+}
+#intro-panel .line3 img {
+  background-color: #4AA162;
+}
+
+#psn-panel .line2 {
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+#psn-panel .line3 {
+  font-size: 2em;
+}
+#psn-panel .line3 div {
+  display: inline-block;
+  width: 20%;
+}
+#psn-panel .line3 span {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  margin-bottom: 0.2em;
+}
+#psn-panel .line3 .glyphicon {
+  opacity: 0.9;
+}
+#psn-panel .line3 .diamond {
+  color: #3481DE;
+}
+#psn-panel .line3 .gold {
+  color: #FFD700;
+}
+#psn-panel .line3 .silver {
+  color: #D2D2D2;
+}
+#psn-panel .line3 .copper {
+  color: #BA6E40;
+}
+#psn-panel .line3 .number {
+  font-size: 0.6em;
+}
+#mynotify .line1 {
+  text-align: left;
+}
+#community-home #myfriend-list-wrapper{
+  height: calc(44em + 6px);
+}
+#myfriend-list-wrapper .friend-list {
+  overflow-y: scroll;
+  width: 98%;
+  height: 90%;
+}
+.friend-list ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.friend-list ul li {
+  display: inline-block;
+  width: 100%;
+  height: 6em;
+  margin-bottom: 0.3em;
+  line-height: 6em;
+  text-align: left;
+  background-color: #ddd;
+}
+.friend-list ul li div {
+  padding: 0;
+  margin: 0;
+}
+.friend-list ul li p {
+  line-height: 2em;
+  height: 2em;
+  font-size: 1.0em;
+  margin: 0;
+  padding: 0;
+  margin-left: 1em;
+}
+.friend-list .name {
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.friend-list .platform{
+  width: 3.5em;
+  height: 1.5em;
+  font-weight: bold;
+  border-radius: 4px;
+  line-height: 1.5em;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.friend-list .ps {
+  background-color: #5392D8; 
+}
+.friend-list .xbox {
+  background-color: #4AA162;
+}
+.friend-list .brief {
+  font-size: .8em;
+  color: #555;
+}
+.friend-list .fight {
+  font-weight: bold;
+  cursor: pointer;
+}
+.friend-list img {
+  width: 100%;
+  margin-left: 2px;
+  vertical-align: middle;
+  border: 2px solid #000;
+}
+#community-home #mygame-list-wrapper {
+  height: 22em;
+}
+#mygame-list-wrapper .game-list {
+  overflow-y: scroll;
+  width: 98%;
+  height: 85%;
+}
+.game-list ul{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.game-list ul li {
+  float: left;
+  width: 32%;
+  margin-right: 1%;
+  height: 8em;
+  margin-bottom: 0.5em;
+  background-color: #ddd;
+  overflow: hidden;
+}
+.game-list ul li div {
+  padding: 0;
+  margin: 0;
+}
+.game-list ul li p {
+  line-height: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 1em;
+  overflow: hidden;
+}
+.game-list .game-name {
+  margin-right: .5em;
+   display: inline-block;
+  font-size: 1.1em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.game-list .platform{
+  width: 3.5em;
+  height: 1.5em;
+  font-weight: bold;
+  border-radius: 4px;
+  line-height: 1.5em;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.game-list .ps {
+  background-color: #5392D8; 
+}
+.game-list .xbox {
+  background-color: #4AA162;
+}
+.game-list .game-status {
+  width: 5em;
+  display: inline-block;
+  color: #fff;
+  background-color: #CC0000;
+  height: 1.5em;
+  font-size: .8em;
+  text-align: center;
+  border-radius: 4px;
+  line-height: 1.5em;
+}
+.game-list img {
+  width: 100%;
+  border: 2px solid #000;
+}
+#community-home #mycompetition-list-wrapper {
+  height: 22em;
+}
+#mycompetition-list-wrapper .competition-list {
+  overflow-y: scroll;
+  width: 98%;
+  height: 85%;
+}
+.competition-list ul{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.competition-list ul li {
+  float: left;
+  width: 100%;
+  height: 8em;
+  margin-bottom: 0.5em;
+  background-color: #ddd;
+  overflow: hidden;
+}
+.competition-list ul li div {
+  padding: 0;
+  margin: 0;
+}
+.competition-list ul li p {
+  line-height: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 1em;
+}
+.competition-list img {
+  width: 100%;
+  border: 2px solid #000;
+}
+.competition-list .competition-name {
+  margin-right: 0.5em;
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.competition-list .competition-date {
+  font-weight: normal;
+}
+.competition-list .platform{
+  width: 3.5em;
+  height: 1.5em;
+  font-weight: bold;
+  border-radius: 4px;
+  line-height: 1.5em;
+  margin-right: .5em;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.competition-list .ps {
+  background-color: #5392D8; 
+}
+.competition-list .xbox {
+  background-color: #4AA162;
+}
+.competition-list .competition-type {
+  width: 5em;
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(233, 147, 26);
+  height: 1.5em;
+  font-size: .8em;
+  text-align: center;
+  border-radius: 4px;
+  line-height: 1.5em;
+}
+#community-home #myactivity-list-wrapper {
+  height: 22em;
+}
+#myactivity-list-wrapper .activity-list {
+  overflow-y: scroll;
+  width: 98%;
+  height: 85%;
+}
+.activity-list ul{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.activity-list ul li {
+  float: left;
+  width: 100%;
+  height: 8em;
+  margin-bottom: 0.5em;
+  background-color: #ddd;
+  overflow: hidden;
+}
+.activity-list ul li div {
+  padding: 0;
+  margin: 0;
+}
+.activity-list ul li p {
+  line-height: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 1em;
+}
+.activity-list img {
+  width: 100%;
+  border: 2px solid #000;
+}
+.activity-list .activity-name {
+  margin-right: 0.5em;
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 2em;
+  font-weight: bold;
+}
+.activity-list .activity-date, .activity-list .activity-place{
+  font-weight: normal;
+}
+.activity-list .activity-type {
+  width: 5em;
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(233, 147, 26);
+  height: 1.5em;
+  font-size: .8em;
+  text-align: center;
+  border-radius: 4px;
+  line-height: 1.5em;
+}
+/*活动页面*/
+#activity-panel {
+  background-color: #F5F5F5;
+  color: #000;
+  padding: 1em;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+#activity-panel .sort-panel {
+  width: 100%;
+  text-align: left;
+}
+#activity-panel .sort-panel label {
+  font-size: 1.1em;
+  padding-left: 2em;
+}
+.activity-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+.activity-wrapper figure {
+  width: 100%;
+}
+#activity-panel .account-sidebar span {
+  font-size: 1.1em;
+}
+/*商品确认页面*/
+#item-info-panel #item-info-bc {
+  padding-top: 9em;
+  padding-bottom: 3em;
+  background-color: #F5F5F5;
+}
+#item-image-wrapper img {
+  width: 100%;
+}
+#item-info-wrapper p {
+  margin: 0;
+  padding: 0;
+  line-height: 3em;
+}
+#item-info-wrapper .title {
+  display: inline-block;
+  width: 7em;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-left: 1em;
+  color: #999;
+}
+#item-info-wrapper .title i {
+  color: #333;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.tooltip.customClass .tooltip-inner {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 1.1em;
+  background-color: #000;
+  padding: .5em .3em;
+  /*box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
+}
+#item-info-wrapper .name {
+  font-weight: bold;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+#item-info-wrapper .category {
+  color: #777;
+  font-size: 1.0em;
+  margin-left: 1em;
+}
+#item-info-wrapper .stock {
+  color: #009900;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+#item-info-wrapper .platform {
+  display: inline-block;
+  width: 9em;
+  line-height: 2.2em;
+  text-align: center;
+  font-weight: bold;
+  background-color: #aaa;
+  color: #fff;
+  cursor: pointer;
+}
+#item-info-wrapper .language {
+  display: inline-block;
+  width: 5em;
+  text-align: left;
+}
+#item-info-wrapper .yuan {
+  font-family: Arial;
+  font-size: 1.3em;
+  color: #CC3333;
+}
+#item-info-wrapper .rental, #item-info-wrapper .deposit {
+  color: #CC3333;
+  font-size: 1.7em;
+}
+#item-info-wrapper .rental-term {
+  margin-left: 3em;
+}
+#item-info-wrapper .platform img {
+  width: 1.7em;
+  height: 1.7em;
+  margin-top: -3px;
+  line-height: 2.2em;
+}
+#item-info-wrapper .selected-ps {
+  border: 3px solid rgb(32,84,142);
+  background-color: #5392D8; 
+}
+#item-info-wrapper .selected-xbox {
+  border: 3px solid rgb(48,105,64);
+  background-color: #4AA162;
+}
+#item-info-wrapper .payment {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2em;
+}
+#item-info-wrapper .payment img {
+  width: 2em;
+  height: 2em;
+  margin-right: .5em;
+}
+#item-info-panel #similiar-wrapper {
+  margin-top: 3em;
+}
+#confirm-method-wrapper {
+  margin-top: 2em;
+  padding-left: 1em;
+}
+#confirm-method-wrapper button {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: .5em;
+}
+/*关于我们页面样式*/
+#about-wrapper {
+  background-color: #eee;
+  padding-top: 10em;
+  padding-bottom: 4em;
+}
+#about-wrapper .title {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+#about-wrapper .title i {
+  font-size: 1.2em;
+  color: #267FC3;
+  margin-right: 10px;
+}
+#about-wrapper .title .logo {
+  font-weight: normal;
+    font-family: LEVIBRUSH;
+}
+#about-wrapper .content {
+  color: #777;
+  font-size: 1.1em;
+  width: 97%;
+  padding: 5px;
+  margin-left: 4%;
+  margin-bottom: 3em;
+  line-height: 1.8em;
+  border-left: 10px solid #FFCC00;
+}
+#about-wrapper .content span {
+  display: inline-block;
+  text-indent: 2em;
+}
+#about-wrapper #content-1 {
+  border-top: 2px solid #FFCC00;
+}
+#about-wrapper .content h5 {
+  color: #555;
+  font-weight: bold;
+}
+#about-wrapper .content .info {
+  color: #267FC3;
+}
+#about-wrapper .content img {
+  width: 50%;
+}
+#about-wrapper #about-us {
+  margin-top: 3em;
+}
+#about-wrapper #title-img {
+  width: 100%;
+}

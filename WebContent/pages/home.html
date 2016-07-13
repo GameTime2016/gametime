@@ -1,0 +1,134 @@
+<!-- 主页内容 -->
+<div id="homepage-panel" class="container">
+  <!-- 轮播窗口 -->
+  <div id="carousel">
+    <uib-carousel interval="5000" active="active">
+      <uib-slide>
+        <img src="./source/image/img5.jpg" alt="...">
+      </uib-slide>
+      <uib-slide>
+        <img src="./source/image/img3.jpg" alt="...">
+      </uib-slide>
+      <uib-slide>
+        <img src="./source/image/img1.jpg" alt="...">
+      </uib-slide>
+    </uib-carousel> 
+  </div>
+<!--   <div style="height: 305px">
+    <uib-carousel active="active">
+      <uib-slide>
+        <img ng-src="./source/image/img5.jpg" alt="...">
+      </uib-slide>
+      <uib-slide>
+        <img ng-src="./source/image/img3.jpg" alt="...">
+      </uib-slide>
+      <uib-slide>
+        <img ng-src="./source/image/img1.jpg" alt="...">
+      </uib-slide>
+    </uib-carousel>
+  </div> -->
+  <!-- 主机分类 -->
+  <div id="consoles-panel" class="row grid">
+    <div class="console-wrapper1 col-xs-6 col-sm-6 col-md-6">
+      <figure  class="effect-apollo">
+        <a ui-sref="products" ng-click="selectByPlatform(1)">
+          <img src="./source/image/PS.jpg" alt="PS"/>
+          <figcaption>
+            <h2>PLAY STATION</h2>
+            <p>超百款游戏任您选！</p>  
+          </figcaption> 
+        </a>    
+      </figure>
+    </div>
+    <div class="console-wrapper2 col-xs-6 col-sm-6 col-md-6">
+      <figure class="effect-apollo pull-right">
+        <a ui-sref="products" ng-click="selectByPlatform(2)">
+          <img src="./source/image/XBOX.jpg" alt="XBOX"/>
+          <figcaption>
+            <h2>XBOX</h2>
+            <p>超百款游戏任您选！</p>
+          </figcaption> 
+        </a>    
+      </figure>
+    </div>
+  </div>
+  <!-- 热销产品展示 -->
+  <div id="hot-products-panel" class="row">
+    <h2>热门游戏</h2>
+    <h4><a href="#">所有热门游戏</a></h4>
+    <hr/>
+    <div class="col-xs-4 col-sm-3 col-md-2" ng-repeat="list in hotGameList">
+      <div class="thumbnail grid">
+        <div class="product-tags">
+          <div class="tag hot-product">HOT</div>
+          <!-- <div class="tag sale-product">-70%</div>  -->
+        </div>
+        <figure class="effect-bubba">
+          <img ng-src={{list.Picture}}>
+          <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+            <figcaption>
+              <p><span class="title">发行日期</span><br><span class="entry">{{list.Issue}}</span></p>
+              <p><span class="title">类型</span><br><span class="entry">{{list.Category}}</span></p>
+              <p><span class="title">发行公司</span><br><span class="entry">{{list.Company}}</span></p>
+            </figcaption> 
+          </a>    
+        </figure>
+        <div class="game-caption">
+          <h3>{{list.Name}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- 最新产品展示 -->
+  <div id="sale-products-panel" class="row">
+    <h2>最新游戏</h2>
+    <h4><a href="#">所有最新游戏</a></h4>
+    <hr/>
+    <div class="col-xs-4 col-sm-3 col-md-2" ng-repeat="list in hotGameList">
+      <div class="thumbnail grid">
+        <figure class="effect-bubba">
+          <img ng-src={{list.Picture}}>
+          <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+            <figcaption>
+              <p><span class="title">发行日期</span><br><span class="entry">{{list.Issue}}</span></p>
+              <p><span class="title">类型</span><br><span class="entry">{{list.Category}}</span></p>
+              <p><span class="title">发行公司</span><br><span class="entry">{{list.Company}}</span></p>
+            </figcaption> 
+          </a>    
+        </figure>
+        <div class="game-caption">
+          <h3><a ui-sref="product-detail({productID:'{{list.Code}}'})">{{list.Name}}</a></h3>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- 打折产品展示 -->
+  <div id="sale-products-panel" class="row">
+    <h2>打折游戏</h2>
+    <h4><a href="#">所有打折游戏</a></h4>
+    <hr/>
+    <div class="col-xs-4 col-sm-3 col-md-2" ng-repeat="list in hotGameList">
+      <div class="thumbnail grid">
+        <div class="product-tags">
+          <!-- <div class="tag hot-product">HOT</div> -->
+          <div class="tag sale-product">-35%</div> 
+        </div>
+        <figure class="effect-bubba">
+          <img ng-src={{list.Picture}}>
+          <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+            <figcaption>
+              <p><span class="title">发行日期</span><br><span class="entry">{{list.Issue}}</span></p>
+              <p><span class="title">类型</span><br><span class="entry">{{list.Category}}</span></p>
+              <p><span class="title">发行公司</span><br><span class="entry">{{list.Company}}</span></p>
+            </figcaption> 
+          </a>    
+        </figure>
+        <div class="game-caption">
+          <h3><a ui-sref="product-detail({productID:'{{list.Code}}'})">{{list.Name}}</a></h3>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+ 

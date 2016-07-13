@@ -1,0 +1,27 @@
+
+<!-- 账户界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="sidebar-selected"><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div class="account-content-panel col-md-9">
+      <h2>邮箱绑定</h2>
+      <hr>
+      <div id="bind-email" class="col-sm-offset-1">
+        <p>一封验证邮件已经发送至您的邮箱<a>{{email}}</a>,请注意查收!</p>
+        <button type="button" class="btn btn-lg btn-warning">重新发送</button>
+      </div>
+    </div>
+  </div>
+</div>

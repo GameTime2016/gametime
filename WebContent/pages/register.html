@@ -1,0 +1,136 @@
+
+<!-- 注册界面 -->
+<div id="register" class="container">
+  <div id="register-panel" class="col-md-6 col-md-offset-3">
+    <h2>免费账号注册</h2>
+    <form class="form-horizontal" name="form_register">
+      <div class="form-group">
+        <div class="col-sm-12  has-feedback">
+          <input name="account" 
+                 ng-model="credentials.input_account" 
+                 type="text" 
+                 class="form-control input-lg" 
+                 placeholder="请输入账号"  
+                 required
+                 ng-pattern="/^[a-zA-Z]\w{5,17}$/"
+                 different-with='exist_account'
+                 ng-class="{'validation-error':form_register.account.$invalid&&form_register.account.$dirty,'validation-success':form_register.account.$valid&&form_register.account.$dirty}">
+          <span class="warning-info" ng-show="form_register.account.$error.required&&form_register.account.$dirty">{{"请输入账号"}}</span>
+          <span class="warning-info" ng-show="form_register.account.$error.pattern">{{"账号必须以字母开头，长度在6~18个字符之间，只能包含字母、数字和下划线"}}</span>
+          <span class="warning-info" ng-show="form_register.account.$error.match">{{"此账号已被注册"}}</span>
+          <span ng-show="form_register.account.$valid&&form_register.account.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+          <span ng-show="form_register.account.$invalid&&form_register.account.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12  has-feedback">
+          <input name="email" 
+                 ng-model="credentials.input_email" 
+                 type="email" 
+                 class="form-control input-lg" 
+                 placeholder="请输入邮箱"  
+                 required
+                 different-with='exist_email' 
+                 ng-class="{'validation-error':form_register.email.$invalid&&form_register.email.$dirty,'validation-success':form_register.email.$valid&&form_register.email.$dirty}">
+          <span class="warning-info" ng-show="form_register.email.$error.required&&form_register.email.$dirty">{{"请输入邮箱"}}</span>
+          <span class="warning-info" ng-show="form_register.email.$error.email">{{"邮箱格式不正确"}}</span>
+          <span class="warning-info" ng-show="form_register.email.$error.match">{{"此邮箱已被注册"}}</span>
+          <span ng-show="form_register.email.$valid&&form_register.email.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+          <span ng-show="form_register.email.$invalid&&form_register.email.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12  has-feedback">
+          <input name="phone" 
+                 ng-model="credentials.input_phone" 
+                 type="text" 
+                 class="form-control input-lg" 
+                 placeholder="请输入手机号"  
+                 required
+                 ng-pattern="/^\d{11}$/"
+                 different-with='exist_phone'                   
+                 ng-class="{'validation-error':form_register.phone.$invalid&&form_register.phone.$dirty,'validation-success':form_register.phone.$valid&&form_register.phone.$dirty}">
+          <span class="warning-info" ng-show="form_register.phone.$error.required&&form_register.phone.$dirty">{{"请输入手机"}}</span>
+          <span class="warning-info" ng-show="form_register.phone.$error.pattern">{{"手机格式不正确"}}</span>
+          <span class="warning-info" ng-show="form_register.phone.$error.match">{{"手机号已被绑定"}}</span>
+          <span ng-show="form_register.phone.$valid&&form_register.phone.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+          <span ng-show="form_register.phone.$invalid&&form_register.phone.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-8 col-xs-8">
+          <input  type="text" 
+                  name="SMS"
+                  ng-model="credentials.input_SMS" 
+                  class="form-control input-lg" 
+                  placeholder="请输入手机验证码"
+                  required>
+          <span class="warning-info" ng-show="form_register.SMS.$error.required&&form_register.SMS.$dirty">{{"请输入手机验证码"}}</span>
+          <span class="warning-info" ng-show="isSMSerror">{{SMS_error_descr}}</span>
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <button type="button" 
+                  ng-disabled="form_register.phone.$invalid||isGettingSMS" 
+                  class="btn btn-lg btn-success" 
+                  ng-click="getSMS()">
+                  获取验证码<span ng-show="isGettingSMS">({{count_donw}})</span>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12  has-feedback">
+          <input name="password" 
+                 ng-model="credentials.input_password" 
+                 type="password" 
+                 class="form-control input-lg" 
+                 placeholder="请输入密码"  
+                 required              
+                 ng-pattern="/^[a-zA-Z]\w{5,17}$/" 
+                 different-with="credentials.input_account"                 
+                 ng-class="{'validation-error':form_register.password.$invalid&&form_register.password.$dirty,'validation-success':form_register.password.$valid&&form_register.password.$dirty}">
+          <span class="warning-info" ng-show="form_register.password.$error.required&&form_register.password.$dirty">{{"请输入密码"}}</span>
+          <span class="warning-info" ng-show="form_register.password.$error.pattern">{{"密码必须以字母开头，长度在6~18之间，只能包含字母、数字和下划线"}}</span>
+          <span class="warning-info" ng-show="form_register.password.$error.match&&form_register.password.$dirty">{{"密码不能与账号相同"}}</span>
+          <span ng-show="form_register.password.$valid&&form_register.password.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+          <span ng-show="form_register.password.$invalid&&form_register.password.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12  has-feedback">
+          <input name="confirm_password" 
+                 ng-model="credentials.input_confirm_password" 
+                 type="password" 
+                 class="form-control input-lg" 
+                 placeholder="请输入确认密码"  
+                 required
+                 same-with="credentials.input_password"                
+                 ng-class="{'validation-error':form_register.confirm_password.$invalid&&form_register.confirm_password.$dirty,'validation-success':form_register.confirm_password.$valid&&form_register.confirm_password.$dirty}">
+          <span class="warning-info" ng-show="form_register.confirm_password.$error.required&&form_register.confirm_password.$dirty">{{"请输入确认密码"}}</span>
+          <span class="warning-info" ng-show="form_register.confirm_password.$error.noMatch&&form_register.confirm_password.$dirty">{{"两次输入的密码不相同"}}</span>
+          <span ng-show="form_register.confirm_password.$valid&&form_register.confirm_password.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+          <span ng-show="form_register.confirm_password.$invalid&&form_register.confirm_password.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input name="agreement" 
+                 ng-model="credentials.input_agreement" 
+                 type="checkbox" 
+                 class="chk"   
+                 required>
+          <span id="agreement">我同意该<a ng-click="openAgreement()" href="">线上隐私政策</a>中规定的各项条款</span><br>
+          <span class="warning-info" ng-show="form_register.agreement.$error.required&&form_register.agreement.$dirty">{{"请先同意该条款"}}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class=" col-sm-12">
+          <button ng-disabled="form_register.$invalid" type="button" ng-click="register()" class="btn btn-lg btn-warning">确认</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>  
+<!-- 注册协议部分 -->
+<!-- #include file="fragments\register_agreement.asp" -->
+
+

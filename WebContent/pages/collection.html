@@ -1,0 +1,46 @@
+<!-- 收藏界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-sm-12 col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li class="sidebar-selected"><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <!-- 收藏内容 -->
+    <div class="account-content-panel col-sm-12 col-md-9">
+      <h2>我的收藏</h2>
+      <hr>
+      <div id="account-collection" class="row">
+        <!-- 无产品提示 -->
+        <div id="no-item-panel" ng-show="isNoItems">
+          <p>您的收藏夹为空。</p>
+        </div>
+        <div class="collection-game-wrapper col-xs-6 col-sm-3 col-md-2"  ng-repeat="list in range(currentPage)">
+          <span class="icon-delete glyphicon glyphicon-remove" ui-sref="collection" ui-sref-opts="{reload: true}" ng-click="deleteCollection(list.Code)"></span>
+          <div class="thumbnail grid">
+            <figure>
+              <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+                <img ng-src={{list.PictureUrl}} >
+              </a>              
+            </figure>
+            <div class="game-caption">
+              <h3>{{list.Name}}</h3>
+            </div>
+          </div>
+        </div>
+        <!-- 分页 -->
+        <div id="pager" class="col-xs-12">
+          <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="noPerPage" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

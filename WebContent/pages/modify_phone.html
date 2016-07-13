@@ -1,0 +1,125 @@
+<!-- 账户界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="sidebar-selected"><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div class="account-content-panel col-md-9">
+      <h2>修改电话</h2>
+      <hr>
+      <div id="modify-phone" class="col-sm-offset-1 col-sm-10">
+        <div>
+          <ul class="step-list">
+            <li ng-class="{'actived':isStep1}">
+              <b>步骤一</b><br><span class="step-title">验证身份</span>
+            </li>
+            <li ng-class="{'actived':isStep2}">
+              <b>步骤二</b><br><span class="step-title">修改信息</span>
+            </li>
+            <li ng-class="{'actived':isStep3}">
+              <b>步骤三</b><br><span class="step-title">完成</span>
+            </li>       
+          </ul>
+        </div>
+        <!-- 步骤一 -->
+        <div class="step-content" ng-show="isStep1">
+          <form class="form-horizontal" name="form_auth">
+            <div class="form-group">
+              <label class="col-sm-3 col-sm-offset-1 control-label">已验证手机</label>
+              <div class="col-sm-7">
+                <span>{{binded_phone}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 col-sm-offset-1 control-label">手机验证码</label>
+              <div class="col-sm-6">
+                <div class="input-group ">          
+                  <input  type="text" 
+                          class="form-control input-lg"  
+                          placeholder="请输入验证码"
+                          name="code"
+                          ng-model="input_code"
+                          required>                  
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-lg btn-success">获取验证码</button>
+                  </div>
+                </div>
+                <span class="warning-info" ng-show="form_auth.code.$error.required&&form_auth.code.$dirty">{{"请输入验证码"}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-3">
+                <button type="button" class="btn btn-warning btn-lg btn-submit" ng-disabled="form_auth.$invalid" ng-click="isStep1=false;isStep2=true">下一步</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- 步骤二 -->
+        <div class="step-content" ng-show="isStep2">
+          <form class="form-horizontal" name="form_modify_phone">
+            <div class="form-group">
+              <label class="col-sm-3 col-sm-offset-1 control-label">新手机号</label>
+              <div class="col-sm-6 has-feedback">
+                <input name="phone"  
+                       type="text" 
+                       class="form-control input-lg" 
+                       placeholder="请输入新的手机号"  
+                       required
+                       ng-pattern="/^\d{11}$/"
+                       ng-model="new_phone"
+                       different-with='binded_phone'                    
+                       ng-class="{'validation-error':form_modify_phone.phone.$invalid&&form_modify_phone.phone.$dirty,'validation-success':form_modify_phone.phone.$valid&&form_modify_phone.phone.$dirty}">
+                <span class="warning-info" ng-show="form_modify_phone.phone.$error.required&&form_modify_phone.phone.$dirty">{{"请输入新的手机号"}}</span>
+                <span class="warning-info" ng-show="form_modify_phone.phone.$error.pattern">{{"手机格式不正确"}}</span>
+                <span class="warning-info" ng-show="form_modify_phone.phone.$error.match">{{"不能与旧手机号相同"}}</span>
+                <span ng-show="form_modify_phone.phone.$valid&&form_modify_phone.phone.$dirty" class="warning-icon-success glyphicon glyphicon-ok form-control-feedback"></span>
+                <span ng-show="form_modify_phone.phone.$invalid&&form_modify_phone.phone.$dirty" class="warning-icon-error glyphicon glyphicon-remove form-control-feedback"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 col-sm-offset-1 control-label">手机验证码</label>
+              <div class="col-sm-6">
+                <div class="input-group ">          
+                  <input  type="text" 
+                          class="form-control input-lg"  
+                          placeholder="请输入验证码"
+                          name="code"
+                          ng-model="input_new_code"
+                          required>                 
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-lg btn-success" ng-disabled="form_modify_phone.phone.$invalid">获取验证码</button>
+                  </div>
+                </div>
+                <span class="warning-info" ng-show="form_modify_phone.code.$error.required&&form_modify_phone.code.$dirty">{{"请输入验证码"}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-3">
+                <button type="button" class="btn btn-warning btn-lg btn-submit" ng-disabled="form_modify_phone.$invalid" ng-click="isStep2=false;isStep3=true">下一步</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- 步骤三 -->
+        <div class="step-content result-panel" ng-show="isStep3">
+          <div class="col-sm-offset-2 col-sm-1">
+            <span class="icon-modify-success glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;&nbsp;
+          </div>
+          <div class="col-sm-7">
+            <p>修改成功,请妥善保管您的账号信息！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

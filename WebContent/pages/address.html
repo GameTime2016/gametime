@@ -1,0 +1,89 @@
+<!-- 地址界面 -->
+<div class="container">
+  <div  class="account-panel row">
+    <!-- 边侧导航栏 -->
+    <div class="account-sidebar col-sm-12 col-md-3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="sidebar-selected"><a ui-sref="account"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+          <li><a ui-sref="bill"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的账单</a></li>
+          <li><a ui-sref="order"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>我的订单</a></li>
+          <li><a ui-sref="collection"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>我的收藏</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>优惠券</a></label></li>
+          <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>问题反馈</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+    <div class="address-panel col-sm-12 col-md-9">
+      	<h2>地址信息</h2>
+      	<hr>
+      	<div id="adress-wrapper">
+	      	<form class="form-horizontal">
+			  <div class="form-group">
+			    <label class="col-sm-3 control-label">所在地区<span class="necessary">&nbsp;*</span></label>
+				<div class="col-sm-2">
+      			  <p class="form-control-static"><b>中国大陆</b></p>
+    			</div>
+			    <div class="col-sm-6">
+			      <div class="input-group" uib-dropdown on-toggle="toggled(open)">
+				    <input class="form-control" placeholder="">
+				    <span class="input-group-addon"  uib-dropdown-toggle>
+				      	<i class="fa fa-chevron-down" aria-hidden="true"></i>
+				  	</span>
+				  	<div class="address-dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+					    1111
+			      	</div>
+			  	  </div>	
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-3 control-label">详细地址<span class="necessary">&nbsp;*</span></label>
+			    <div class="col-sm-8">
+			      <textarea class="form-control" rows="4"></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-3 control-label">邮政编码<span class="necessary">&nbsp;*</span></label>
+			    <div class="col-sm-4">
+			      <input class="form-control" placeholder="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-3 control-label">收货人姓名<span class="necessary">&nbsp;*</span></label>
+			    <div class="col-sm-4">
+			      <input class="form-control" placeholder="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-3 control-label">电话号码<span class="necessary">&nbsp;*</span></label>
+			    <div class="col-sm-5">
+			      <input class="form-control" placeholder="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-3 col-sm-10">
+			      <button type="submit" class="btn btn-success  col-xs-5 col-sm-3">保存</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+<!--       <div id="adress-wrapper">
+      	<div class="entry">
+      		<span class="title">所在地区</span>
+      	</div>
+      	<div class="entry">
+      		<span class="title">详细地址</span>
+      	</div>
+      	<div class="entry">
+      		<span class="title">邮政编码</span>
+      	</div>
+      	<div class="entry">
+      		<span class="title">收货人姓名</span>
+      	</div>
+      	<div class="entry">
+      		<span class="title">电话号码</span>
+      	</div>
+      </div> -->
+    </div>
+  </div>
+</div>

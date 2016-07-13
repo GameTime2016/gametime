@@ -1,0 +1,46 @@
+
+<!-- 购物车界面 -->
+<div id="cart-panel" class="container">
+  <div class="row">
+    <div id="shopping-cart-panel" class="col-md-12">
+      <h2>游戏车</h2>
+      <hr>
+      <div id="shopping-cart">
+        <form id="shopping-cart-form">
+          <table class="table table-hover" id="shopping-table">
+            <tr class="info">
+              <th class="col-sm-1"><input class="chk" type="checkbox" ng-model="check_all" ng-click="checkAll()"> 全选</th>
+              <th class="col-sm-1">类型</th>
+              <th class="col-sm-1"></th>
+              <th class="col-sm-2">商品名称</th>
+              <th class="col-sm-1">单价/押金</th>
+              <th class="col-sm-1">数量</th>
+              <th class="col-sm-1">金额</th>
+              <th class="col-sm-1"></th>
+            </tr>
+            <tr ng-repeat="item in items">
+              <td><input class="chk" name="item" type="checkbox" ng-checked="check_all" ng-click="check($index)" ></td>
+              <td>{{item.mode}}</td>
+              <td><img ng-src="{{item.href}}"></td>
+              <td><a href="">{{item.name}}</a></td>
+              <td>{{item.price}}</td>
+              <td><input class="cart-number-input" ng-model="item.number" value="{{item.number}}" ng-change="numberChange()" type="number"></td>
+              <td>{{item.number*item.price}}</td>
+              <td><a href="" ng-click="deleteItem($index)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除</a></td>
+            </tr>
+          </table>
+          <hr>
+          <div id="summary-panel">
+            <p id="remind-area" ></p>
+            <table id="summary-table" class="pull-right">
+              <td class="col-sm-2"></td>
+              <td class="col-sm-3">已选商品 <span class="item-number">{{item_number}}</span> 件</td>
+              <td class="col-sm-3">合计 <span class="balance">¥{{total_price}}</span></td>
+              <td class="col-sm-4"><button id="balance-btn" class="btn btn-lg btn-warning" type="submit" ng-disabled="item_number == 0">结算</button></td>
+            </table>
+          </div>
+        </form>
+      </div>        
+    </div>
+  </div>
+</div>

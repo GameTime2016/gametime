@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.ProductItemDao">
+
+<resultMap type="ProductItem" id="resultMapProductItem">
+	<result column="GS_ProductsCode" property="productCode" />
+	<result column="GS_ProductsItemSeq" property="productItemSeq" />
+	<result column="GS_PlatformName" property="platformName" />
+	<result column="GS_LanguageName" property="languageName" />
+	<result column="GS_HardwareStorageMin" property="hardwareStorage" />
+	<result column="GS_HardwareGPUMin" property="hardwareGPU" />
+	<result column="GS_HardwareVibrate" property="hardwareVibrate" />
+	<result column="GS_HardwareRemote" property="hardwareRemote" />
+	<result column="GS_ProductsItemQty" property="productItemQty" />
+	<result column="GS_ProductsItemPrice" property="productItemPrice" />
+	<result column="GS_ProductsItemRent" property="productItemRent" />
+	<result column="GS_GameVideoAddress" property="gamevideoAddress" />
+	<result column="GS_ProductsItemRate" property="productRate" />
+	<result column="GS_AgeFrom" property="ageFrom" />
+	<result column="GS_AgeTo" property="ageTo" />
+</resultMap>
+
+<select id="getProductItemByCode" parameterType="String" resultMap="resultMapProductItem">
+	SELECT pi.GS_ProductsCode, pi.GS_ProductsItemSeq, pf.GS_PlatformName, lg.GS_LanguageName,
+		hw.GS_HardwareStorageMin, hw.GS_HardwareGPUMin, hw.GS_HardwareVibrate, hw.GS_HardwareRemote,
+		pi.GS_ProductsItemQty, pi.GS_ProductsItemPrice, pi.GS_ProductsItemRent, 
+		gv.GS_GameVideoAddress, pi.GS_ProductsItemRate, ag.GS_AgeFrom, ag.GS_AgeTo
+	FROM gs_productsitem pi 
+		LEFT JOIN gs_platform pf ON pi.GS_PlatformID = pf.GS_PlatformID 
+		LEFT JOIN gs_language lg ON pi.GS_LanguageID = lg.GS_LanguageID
+		LEFT JOIN gs_hardware hw ON pi.GS_HardwareID = hw.GS_HardwareID
+		LEFT JOIN gs_age ag ON pi.GS_AgeID = ag.GS_AgeID
+		LEFT JOIN gs_gamevideo gv ON pi.GS_ProductsCode = gv.GS_ProductsCode
+	WHERE pi.GS_ProductsCode = #{productCode}
+</select> 
+
+</mapper>

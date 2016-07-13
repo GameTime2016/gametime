@@ -1,0 +1,50 @@
+<div id="wrapper" ng-style="{'min-height':wrapper_height}"> 
+  <div id="welcome-wrapper" class="pad" ng-class="[color,delay]">
+    <div class="logo" ng-class="{'animation1':step1}">
+    <a href="" ng-click="start()"><img ng-src="./source/image/logo1.png"></a>
+    </div>
+    <div id='btn-height' class="button button1" ng-class="{'ani-yellow':step1,'delay':delay}"></div>
+    <div class="button button2" ng-class="{'ani-blue':step1,'delay':delay}"></div>
+    <div class="button button3" ng-class="{'ani-red':step1,'delay':delay}"></div>
+    <div class="button button4" ng-class="{'ani-green':step1,'delay':delay}"></div>
+    <div class="button button-curtain button1" ui-sref="community"
+      ng-mouseenter="color='ani-yellow';delay='';btn1=true;btn2=false;btn3=false;btn4=false"
+      ng-mouseleave="btn1=false">
+      <div class="line line1" ng-class="{'ani-l1':btn1}" ng-style="{'border-width':border}">
+      </div>
+      <div class="p p1" ng-class="{'ani-p':btn1}" ng-style="{'font-size':size}">
+          <span class="glyphicon fa fa-users" aria-hidden="true"></span>社区
+      </div>
+    </div>
+    <div class="button button-curtain button2" ui-sref="home"
+      ng-mouseenter="color='ani-blue';delay='';btn1=false;btn2=true;btn3=false;btn4=false"
+      ng-mouseleave="btn2=false">
+      <div class="line line2" ng-class="{'ani-l2':btn2}" ng-style="{'border-width':border}">
+      </div>
+      <div class="p p2" ng-class="{'ani-p':btn2}" ng-style="{'font-size':size}">
+          <span class="glyphicon fa fa-diamond" aria-hidden="true"></span>商城
+      </div>
+    </div>
+    <div class="button button-curtain button3" 
+      ng-mouseenter="color='ani-red';delay='';btn1=false;btn2=false;btn3=true;btn4=false"
+      ng-mouseleave="btn3=false">
+      <div class="line line3" ng-class="{'ani-l3':btn3}" ng-style="{'border-width':border}">
+      </div>
+      <div class="p p3" ng-class="{'ani-p':btn3}" ng-style="{'font-size':size}">
+        <span class="glyphicon fa fa-trophy" aria-hidden="true"></span>竞技
+      </div>
+    </div>
+    <div class="button button-curtain button4" 
+      ng-mouseenter="color='ani-green';delay='';btn1=false;btn2=false;btn3=false;btn4=true"
+      ng-mouseleave="btn4=false">
+      <div class="line line4" ng-class="{'ani-l4':btn4}" ng-style="{'border-width':border}">
+      </div>
+      <div class="p p4" ng-class="{'ani-p':btn4}" ng-style="{'font-size':size}">
+        <span class="glyphicon fa fa-camera-retro" aria-hidden="true"></span>活动
+      </div>
+    </div>
+    <div class="pad-image" ng-class="index"> 
+      <img ng-src="./source/image/4.png" imageonload>
+    </div>
+  </div>
+</div>

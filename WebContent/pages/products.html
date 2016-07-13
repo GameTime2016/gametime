@@ -1,0 +1,106 @@
+
+  <!-- 产品展示页面内容 -->
+  <div id="products-content" class="container">
+    
+    <div class="row">
+      <!-- 面包屑导航 -->
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="#">所有产品</a></li>
+          <li>游戏</li>
+        </ol>
+      </div>
+      <!-- 索引栏 -->
+      <div class="col-md-12">
+        <div id="product-index">
+          <div>
+            <ul class="nav">
+              <li class="index-title"><a href="#">平台</a></li>
+              <li ng-class="{'active':isAllPlatform}" ng-click="selectByPlatform(-1)">
+                <a ui-sref="products" ui-sref-opts="{reload: true}">全部</a>
+              </li>
+              <li ng-repeat="list in sortByPlatform" ng-class="{'active':list.isSelected}" ng-click="selectByPlatform(list.ID)">
+                <a ui-sref="products" ui-sref-opts="{reload: true}">{{list.Name}}</a>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div>
+            <ul class="nav">
+              <li class="index-title"><a href="#">类型</a></li>
+              <li ng-class="{'active':isAllType}" ng-click="selectByType(-1)">
+                <a ui-sref="products" ui-sref-opts="{reload: true}">全部</a>
+              </li>
+              <li ng-repeat="list in sortByType" ng-class="{'active':list.isSelected}" ng-click="selectByType(list.ID)">
+                <a ui-sref="products" ui-sref-opts="{reload: true}">{{list.Name}}</a>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div>
+            <ul class="nav">
+              <li class="index-title"><a href="#">分类</a></li>
+              <li class="active"><a href="#">全部</a></li>
+              <li><a href="#">打折</a></li>
+              <li><a href="#">热销</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 边侧导航栏 -->
+    <div class="row">
+<!--       <div id="sidebar-sort" class="col-sm-12 col-md-2">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">依据平台</li>
+            <li ng-repeat="list in sortByPlatform" ng-click="searchByPlatform(list.ID)" ui-sref="products" ui-sref-opts="{reload: true}">
+              <input name="type" type="checkbox" ng-checked="{{list.isSelected}}">
+              <label class="chk-label">{{list.Name}}</label>
+            </li>
+          </ul>
+          <ul class="nav nav-list">
+            <li class="nav-header">依据类型</li>
+            <li ng-repeat="list in sortByType" ng-click="searchByType(list.ID)" ui-sref="products" ui-sref-opts="{reload: true}">
+              <input name="type" type="checkbox" ng-checked="{{list.isSelected}}">
+              <label class="chk-label">{{list.Name}}</label>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+      <!-- 产品缩略图 -->
+      <div id="products-render" class="col-md-12">
+        <!-- 无产品提示 -->
+        <div id="no-item-panel" ng-show="isNoItems">
+          <p>抱歉！没有搜索到您所查找的游戏。</p>
+        </div>
+        <!-- 产品展示 -->
+        <div class="product-wrapper col-xs-4 col-sm-3 col-md-2" ng-repeat="list in range(currentPage)">
+          <div class="thumbnail grid">
+            <figure class="effect-julia">
+              <img ng-src={{list.Picture}}>
+              <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+                <figcaption>
+                  <div>
+                    <p><span class="title">发行日期</span><br><span class="entry">{{list.Issue}}</span></p>
+                    <p><span class="title">游戏类型</span><br><span class="entry">{{list.Category}}</span></p>
+                    <p><span class="title">发行公司</span><br><span class="entry">{{list.Company}}</span></p>
+                  </div>  
+                </figcaption> 
+              </a>    
+            </figure>
+            <div class="game-caption">
+              <h3><a ui-sref="product-detail({productID:'{{list.Code}}'})">{{list.Name}}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- 分页 -->
+        <div id="pager" class="col-xs-12">
+          <uib-pagination boundary-links="true" total-items="totalItems" items-per-page="noPerPage" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,85 @@
+<div id="item-info-panel">
+  <div id="item-info-bc">
+    <div class="container">
+      <div class="row">
+        <div id="item-image" class="col-sm-4">
+      	  <div id="item-image-wrapper">
+      		  <img ng-src="{{item_image_url}}">
+      	  </div>
+      	</div>
+      	<div class="col-xs-12 col-sm-8">
+      	  <div id="item-info-wrapper">
+      	  	<p class="item-name">
+              <span class="name" ui-sref="product-detail({productID:'{{game_code}}'})">{{item_name}}</span>
+              <span class="category">{{item_category}}</span>
+            </p>
+      	  	<p class="item-platform">
+      	  		<span class="title">选择平台</span>
+      	  		<span class="platform" ng-click="plat_ps=true;plat_xbox=false;" ng-class="{'selected-ps':plat_ps}">
+      	  			<img src="./source/image/icon_psn.png">&nbsp;PS4
+      	  		</span>
+      	  		<span class="platform" ng-click="plat_xbox=true;plat_ps=false;" ng-class="{'selected-xbox':plat_xbox}">
+      	  			<img src="./source/image/icon_xbox.png">&nbsp;XBOX ONE
+      	  		</span>
+      	  	</p>
+      	  	<p class="item-language">
+              <span class="title">游戏语言</span>&nbsp;
+              <span class="language">繁体中文</span>
+              <span class="language">英文</span>
+            </p>
+            <p class="item-stock">
+              <span class="title">库存</span>&nbsp;
+              <span>剩余&nbsp;<span class="stock">9</span>&nbsp;件</span>
+            </p>
+      	  	<p class="item-rental">
+              <span class="title">租金
+                <i class="fa fa-question-circle" uib-tooltip="{{rental_term}}" tooltip-placement="right" tooltip-class="customClass"></i>
+              </span>&nbsp;
+              <span class="yuan">&yen;</span>
+              <span class="rental">2</span>&nbsp;/&nbsp;天
+              <a class="rental-term" href="">查看租金计算说明</a>
+            </p>
+      	  	<p class="item-deposit">
+              <span class="title">押金
+                <i class="fa fa-question-circle" uib-tooltip="{{deposit_term}}" tooltip-placement="right" tooltip-class="customClass"></i>
+              </span>&nbsp;
+              <span class="yuan">&yen;</span>
+              <span class="deposit">280</span>
+            </p>
+      	  	<p class="item-payment"><span class="title">支付方式</span>
+              <span class="payment"><img src="./source/icon/zhifubao.png">支付宝</span>
+              <span class="payment"><img src="./source/icon/weixin.png">微信支付</span>
+            </p>
+      	  </div>
+          <div id="confirm-method-wrapper" class="row" >
+            <div class="col-sm-6 col-md-4">
+              <button class="btn btn-lg btn-warning" ng-click="jumpto('check')">去结算</button>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <button class="btn btn-lg btn-danger" ng-click="jumpto('add-item')"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;加入购物车</button>
+            </div>
+          </div>
+      	</div>
+      </div>
+    </div>
+  </div>
+  <div id="similiar-wrapper" class="container">
+    <div>
+      <h4>更过类似游戏</h4>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-2" ng-repeat="list in similiarGames">
+        <div class="thumbnail grid">
+          <figure>
+            <a ui-sref="product-detail({productID:'{{list.Code}}'})">
+            <img ng-src={{list.Picture}}>
+            </a>
+          </figure>
+          <div class="game-caption">
+            <h3><a ui-sref="product-detail({productID:'{{list.Code}}'})">{{list.Name}}</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
