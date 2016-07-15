@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.PlatformDao">
+
+<resultMap type="Platform" id="resultListPlatform">
+	<result column="GS_PlatformID" property="ID" />
+	<result column="GS_PlatformName" property="Name" />
+</resultMap>
+
+<select id="getPlatform" parameterType="int" resultMap="resultListPlatform">
+	SELECT GS_PlatformID, GS_PlatformName From `gs_platform`
+</select> 
+
+</mapper>

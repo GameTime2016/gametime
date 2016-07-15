@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.CategoryDao">
+
+<resultMap type="Category" id="resultMapCategory">
+	<result column="GS_CategoryID" property="ID" />
+	<result column="GS_CategoryName" property="Name" />
+</resultMap>
+
+<select id="getCategory" parameterType="int" resultMap="resultMapCategory">
+	SELECT GS_CategoryID, GS_CategoryName From `gs_category`
+</select> 
+
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.UserDao">
+
+	<resultMap type="User" id="resultMapUser">
+		<result column="GS_UserCode" property="userCode" />
+		<result column="GS_UserAccount" property="userAcount" />
+		<result column="GS_UserNickNam" property="userNickName" />
+		<result column="GS_UserPhone" property="userPhone" />
+		<result column="GS_UserEmail" property="userEmail" />
+		<result column="GS_UserSex" property="userSex" />
+		<result column="GS_UserBirthDay" property="userBirthday" />
+		<result column="GS_UserName" property="userName" />
+		<result column="GS_UserIDCard" property="userIDCard" />
+		<result column="GS_UserZipCode" property="userZipCode" />
+		<result column="GS_UserAddress" property="userAddress" />
+		<result column="GS_UserCreditRating" property="userCreditRating" />
+		<result column="GS_UserCrtDate" property="userLockState" />
+		<result column="GS_UserUpdDate" property="userCrtDate" />
+		<result column="GS_UserLockState" property="userUpdDate" />
+		<result column="GS_UserPassword" property="userPassword" />
+	</resultMap>
+
+	<!-- 用户ID查询用户信息 -->
+	<select id="getUserByCode" parameterType="String" resultMap="resultMapUser">
+		SELECT GS_UserCode, GS_UserAccount, GS_UserNickNam, GS_UserPhone,
+			GS_UserEmail, GS_UserSex, GS_UserBirthDay, GS_UserName, GS_UserIDCard,
+			GS_UserZipCode, GS_UserAddress, GS_UserCreditRating, GS_UserCrtDate,
+			GS_UserUpdDate, GS_UserLockState, GS_UserPassword
+		FROM gs_user
+		WHERE
+		GS_UserCode = #{code}
+	</select>
+
+	<!-- 用户账户查询用户信息 -->
+	<select id="getUserByAccount" parameterType="String" resultMap="resultMapUser">
+		SELECT GS_UserCode, GS_UserAccount, GS_UserNickNam, GS_UserPhone,
+			GS_UserEmail, GS_UserSex, GS_UserBirthDay, GS_UserName, GS_UserIDCard,
+			GS_UserZipCode, GS_UserAddress, GS_UserCreditRating, GS_UserCrtDate,
+			GS_UserUpdDate, GS_UserLockState, GS_UserPassword
+		FROM gs_user
+		WHERE
+		GS_UserAccount = #{account} OR GS_UserPhone = #{account}
+	</select>
+	
+	<select id="exitPhoneAndAccount" parameterType="String" resultType="java.util.Map">
+		SELECT 
+			MAX(CASE Property WHEN 'Phone' THEN Count ELSE 0 END) 'Phone',
+			MAX(CASE Property WHEN 'Account' THEN Count ELSE 0 END) 'Account'
+		FROM (
+			SELECT 'Phone' AS Property, count(GS_UserPhone) AS Count FROM gs_user WHERE GS_UserPhone = #{Phone}
+			UNION ALL
+			SELECT 'Account' AS Property, count(GS_UserAccount) AS Count FROM gs_user WHERE GS_UserAccount = #{Account}) t
+	</select>
+	
+	<!-- 手机号查询用户 -->
+	<select id="getPhone" parameterType="String" resultType="int">
+		SELECT COUNT(GS_UserPhone) FROM gs_user WHERE GS_UserPhone = #{phone}
+	</select>
+
+	<!-- 账户查询用户 -->
+	<select id="getAccount" parameterType="String" resultType="int">
+		SELECT COUNT(GS_UserAccount) FROM gs_user WHERE GS_UserAccount = #{account}
+	</select>
+	
+	<!-- 用户注册 -->
+	<insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="GS_UserCode">
+		INSERT INTO 
+			gs_user(GS_UserCode, GS_UserAccount, GS_UserPhone, GS_UserCrtDate, GS_UserUpdDate, GS_UserLockState, GS_UserCreditRating, GS_UserPassword)
+		VALUE
+			(#{userCode}, #{userAcount}, #{userPhone}, #{userCrtDate}, #{userUpdDate}, #{userLockState}, #{userCreditRating}, #{userPassword})
+    </insert>
+    
+    <!-- 更改用户基本信息 -->
+    <update id="updateUserInfo" parameterType="User">
+    	UPDATE gs_user 
+    	SET GS_UserNickNam = #{userNickName}, GS_UserSex = #{userSex}, GS_UserName = #{userName}, GS_UserIDCard = #{userIDCard}, GS_UserZipCode = #{userZipCode}, 
+    	GS_UserAddress = #{userAddress}, GS_UserCreditRating = #{userCreditRating}, GS_UserUpdDate = #{userUpdDate}
+    	WHERE GS_UserAccount = #{userAcount}
+    </update>
+    
+    <!-- 更改用户手机号 -->
+    <update id="updateUserPhone" parameterType="User">
+    	UPDATE gs_user SET GS_UserPhone = #{userPhone}, GS_UserUpdDate = #{userUpdDate} WHERE GS_UserAccount = #{userAcount}
+    </update>
+    
+    <!-- 更改用户密码 -->
+    <update id="updateUserPassword" parameterType="User">
+    	UPDATE gs_user SET GS_UserPassword = #{userPassword}, GS_UserUpdDate = #{userUpdDate} WHERE GS_UserAccount = #{userAcount}
+    </update>
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.gametime.dao.UserAddressDao">
+     <resultMap type="UserAddress" id="resultselectUseraddress">
+	    <result column="GS_UserAddressID" property="userAddressID" />
+	    <result column="GS_UserAddressDesc" property="userAddressDesc" />
+	    <result column="GS_UserAddressPhone" property="userAddressPhone"/>
+	    <result column="GS_UserAddressName" property="userAddressName" />
+	    <result column="GS_UserAddressDefault" property="userAddressDefault" />
+	    <result column="GS_UserAddressCrtDate" property="userAddressCrtDate" />
+	    <result column="GS_UserAddressDistrictsID" property="userAddressDistrictsID" />
+	    <result column="GS_UserAddressZipCode" property="userAddressZipCode" />
+	    <result column="GS_UserCode" property="userCode" />
+    </resultMap>
+    
+	<insert id="setUseraddress" parameterType="UserAddress">
+		insert into
+		gs_useraddress(GS_UserCode,
+                       GS_UserAddressID,
+                       GS_UserAddressDistrictsID,
+                       GS_UserAddressDesc,
+                       GS_UserAddressZipCode,
+                       GS_UserAddressPhone,
+                       GS_UserAddressName,
+                       GS_UserAddressDefault,
+                       GS_UserAddressCrtDate)
+		values(#{userCode},#{userAddressID},#{userAddressDistrictsID},
+		#{userAddressDesc},#{userAddressZipCode},#{userAddressPhone},
+		#{userAddressName},#{userAddressDefault},#{userAddressCrtDate})
+    </insert>
+    <delete id="deleteUseraddress" parameterType="String">
+        delete from gs_useraddress where GS_UserAddressID=#{userAddressID}
+    </delete>
+    <update id="updateUseraddress" parameterType="UserAddress" >
+        update gs_useraddress set GS_UserAddressID=#{userAddressID},GS_UserAddressDesc=#{userAddressDesc},GS_UserAddressPhone=#{userAddressPhone},GS_UserAddressName=#{userAddressName} where GS_UserAddressID=#{userAddressID}
+    </update>
+    <select id="selectUseraddress" parameterType="String" resultMap="resultselectUseraddress">
+	  select GS_UserAddressID,GS_UserAddressDesc,GS_UserAddressPhone,GS_UserAddressName,GS_UserAddressDefault,GS_UserAddressCrtDate,GS_UserAddressDistrictsID,GS_UserAddressZipCode,GS_UserCode from `gs_useraddress` where GS_UserCode=#{userCode}
+    </select> 
+</mapper>
